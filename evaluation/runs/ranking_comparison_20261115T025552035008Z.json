@@ -1,0 +1,298 @@
+{
+  "run_id": "20261115T025552035008Z",
+  "split": "development",
+  "initial_k": 15,
+  "label_scope": "Selected supporting-point IDs; not exhaustive relevance judgments",
+  "metrics": {
+    "hybrid": {
+      "hit_at_1": {
+        "hits": 2,
+        "cases": 6,
+        "rate": 0.3333333333333333
+      },
+      "hit_at_5": {
+        "hits": 5,
+        "cases": 6,
+        "rate": 0.8333333333333334
+      }
+    },
+    "hybrid_reranked": {
+      "hit_at_1": {
+        "hits": 4,
+        "cases": 6,
+        "rate": 0.6666666666666666
+      },
+      "hit_at_5": {
+        "hits": 5,
+        "cases": 6,
+        "rate": 0.8333333333333334
+      }
+    }
+  },
+  "results": [
+    {
+      "case_id": "umd_cpt_offer_letter_001",
+      "question": "What information does UMD require in the employer offer letter for a CPT application?",
+      "hybrid": {
+        "supporting_rank": 8,
+        "point_ids": [
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4"
+        ]
+      },
+      "hybrid_reranked": {
+        "supporting_rank": 3,
+        "point_ids": [
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109"
+        ]
+      }
+    },
+    {
+      "case_id": "umd_cpt_remote_001",
+      "question": "What does UMD require for documenting remote work in a CPT application?",
+      "hybrid": {
+        "supporting_rank": 2,
+        "point_ids": [
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd"
+        ]
+      },
+      "hybrid_reranked": {
+        "supporting_rank": 11,
+        "point_ids": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc"
+        ]
+      }
+    },
+    {
+      "case_id": "umd_cpt_authorization_001",
+      "question": "My CPT application is submitted. Can I start working before receiving the updated I-20?",
+      "hybrid": {
+        "supporting_rank": 1,
+        "point_ids": [
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177"
+        ]
+      },
+      "hybrid_reranked": {
+        "supporting_rank": 1,
+        "point_ids": [
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177"
+        ]
+      }
+    },
+    {
+      "case_id": "umd_cpt_processing_001",
+      "question": "How long does UMD typically take to process a complete CPT request?",
+      "hybrid": {
+        "supporting_rank": 2,
+        "point_ids": [
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "f549a802-c515-521c-8120-e79fefd63913"
+        ]
+      },
+      "hybrid_reranked": {
+        "supporting_rank": 1,
+        "point_ids": [
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0"
+        ]
+      }
+    },
+    {
+      "case_id": "umd_cpt_location_001",
+      "question": "Does UMD authorize CPT for remote work performed outside the United States?",
+      "hybrid": {
+        "supporting_rank": 1,
+        "point_ids": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177"
+        ]
+      },
+      "hybrid_reranked": {
+        "supporting_rank": 1,
+        "point_ids": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c"
+        ]
+      }
+    },
+    {
+      "case_id": "umd_cpt_summer_dates_001",
+      "question": "What are the Summer 2027 CPT start, end, and request deadlines in this UMD snapshot?",
+      "hybrid": {
+        "supporting_rank": 3,
+        "point_ids": [
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "92f9661d-53f3-5bae-a832-0e976d610b95"
+        ]
+      },
+      "hybrid_reranked": {
+        "supporting_rank": 1,
+        "point_ids": [
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "92f9661d-53f3-5bae-a832-0e976d610b95"
+        ]
+      }
+    }
+  ]
+}

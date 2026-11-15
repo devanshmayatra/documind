@@ -1,0 +1,104 @@
+{
+  "run_id": "20261115T142526130747Z",
+  "scope": "Offer-letter development cases; live retrieval and generation, empty chat history; no Streamlit UI",
+  "pipeline": "hybrid_rrf_flashrank",
+  "initial_k": 15,
+  "final_k": 4,
+  "collection": "resume_rag_kb",
+  "model": "models/gemini-3.6-flash",
+  "implementation_sha256": {
+    "core/retriever.py": "48f45bd384bdd9096a0bdade1376b900e981f3222ba677d995e5407dd79216d7",
+    "core/generator.py": "93fe0b502cb37ffdbaf76af58443b168787154eba8b8ed75b6cfec7237e5e598",
+    "core/qdrant_engine.py": "9cb2537c357a735b8a33c0ed77c5e8136da9de62db244b9e68528019ba04ee7c",
+    "scripts/evaluate_generation.py": "ba95045fe3b81b160b7ededd0e025d0cc1b81e5be4181ab6475037ec82572d7d",
+    "scripts/evaluate_end_to_end.py": "5be063102212cb105da0dd388bc68398f78af2c393c595f1292ca0de34770d34"
+  },
+  "review_note": "Expected statuses come from supplied-evidence development cases. Review actual retrieved evidence before treating a mismatch as a generation error. A matching status or valid citation IDs do not establish factual support. Reference snapshot is a label, not verification of the live corpus version.",
+  "latency_scope": "Rewrite, embedding, retrieval, reranking, generation and validation; excludes module initialization",
+  "case_count": 1,
+  "reference_outcome_matches": 0,
+  "execution_errors": 1,
+  "completed_reference_outcome_mismatches": 0,
+  "results": [
+    {
+      "case_id": "offer_letter_date_footnote_conditions",
+      "question": "What semester restriction applies to UMD CPT internship dates, and what does UMD ask for if the internship start date has already passed or will pass by the time ISSS reviews the application?",
+      "reference_expected_status": "citation_ids_valid",
+      "reference_source_snapshot": "20261114T213307398026Z",
+      "manual_review_criteria": [
+        "Dates must be within the semester the student is registered for the course associated with CPT, with a citation.",
+        "Preserves both triggers: the start date has passed OR will pass by ISSS review.",
+        "Requests an email from the employer indicating a new later start date, with a citation.",
+        "Does not claim the later date permits work before authorization or guarantees approval.",
+        "Does not use the date footnote to resolve the separate ambiguous 'specific term' phrase."
+      ],
+      "manual_review_status": "pending",
+      "passages": [
+        {
+          "text": "*Internship dates must be within the semester you are registered for the course associated with your CPT (see Step 2).You can find semester dates for each academic year here. If your internship start date has passed or will pass by the time ISSS reviews your CPT application, please include an email from your employer indicating a new later start date.\nClick here to see an example of an internship/co-op offer letter.\nStudents are urged to review the CPT checklist to confirm all required documents are uploaded and all necessary details are included in the offer letter. Any student working remotely on CPT must have this confirmed in the offer letter or in supporting documentation, the address where you will work remotely must also be mentioned by the employer.\nStep 2. Register for an academic component (course)\nRegister for an academic component (course) that is required for the completion of your degree.",
+          "source": "umd_cpt.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "Curricular Practical Training (CPT)",
+          "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+          "source_updated_at": null,
+          "rank": 1,
+          "citation_id": "[S1]",
+          "point_id": "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "rerank_score": 0.9992539286613464
+        },
+        {
+          "text": "Master’s thesis students in final semester: CPT cannot be authorized beyond the thesis defense date. If CPT was originally authorized past the defense date, the authorization period will be shortened accordingly.\nDeadlines and Changes\nCPT authorizations are limited to once per semester; please consider your placements carefully before applying for your authorization.\nWe recommend discussing the total length of time that you need to complete the internship project and using the latest possible estimated end date on your offer letter documentation.\nPlease submit your requests to sign up for the course associated with CPT 5 days prior to the ISSS submission deadline. Your CPT must start on or before the deadline.\nPlease see the chart below for a list of the earliest possible dates your employment can start and the last possible date your employment can end for that term:\nTable 1, row 1\nTERM: Fall 2026\nEarliest start date: Aug 31, 2026\nLatest end date: Dec 21, 2026",
+          "source": "umd_cpt.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "Curricular Practical Training (CPT)",
+          "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+          "source_updated_at": null,
+          "rank": 2,
+          "citation_id": "[S2]",
+          "point_id": "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "rerank_score": 0.9934399724006653
+        },
+        {
+          "text": "Eligibility, Limitations and Deadlines\nYou must have been maintaining F-1 status for at least:\nSemester students: one academic year (2 semesters)\n12 Week Term students: 4 terms\nBe a student in good academic standing\nInternship/training/research must be a requirement for the degree or dissertation completion\nGPA requirements:\nUndergraduates: 2.00\nGraduates: 3.00\nStudents who change degree programs must complete one semester in the new program and receive a qualifying GPA before applying for CPT.\nThis includes; transfer students, Bachelors students who graduate and begin a graduate program and UMCP Masters students who begin a UMD PhD program.\nLimitations\nHours per week:\nNo more than 20 hours per week during the semester, including on campus work (part-time)\nNo maximum limit during school vacations (full-time)\nOnly part-time CPT in student's final term (including summer)\nLocation:",
+          "source": "umd_cpt.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "Curricular Practical Training (CPT)",
+          "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+          "source_updated_at": null,
+          "rank": 3,
+          "citation_id": "[S3]",
+          "point_id": "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "rerank_score": 0.9875281453132629
+        },
+        {
+          "text": "Table 1, row 4\nTERM: Summer 2027\nEarliest start date: May 21, 2027\nLatest end date: Aug 29, 2027\nFinal date to request and begin CPT authorization: July 31, 2027\nApplication Procedure\nStep 1. Obtain an internship/co-op offer letter\nObtain an internship/co-op offer letter from an employer which includes all of the following information:\nOfficial company letterhead\nAn authorized signature\nSpecific start and end dates of the internship/co-op*\nNumber of hours per week\nAddress of the workplace (if your employer address is different from the work site, please provide both addresses. No PO Box addresses)\nAmount of compensation\nJob description (specific job responsibilities)\nThe name of your supervisor during the internship/co-op\nThe specific term internship or co-op\nIf you are a Masters thesis/Ph.D. student in your research phase: a statement that the employer understands that this work will be incorporated as  part of your thesis/dissertation research.",
+          "source": "umd_cpt.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "Curricular Practical Training (CPT)",
+          "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+          "source_updated_at": null,
+          "rank": 4,
+          "citation_id": "[S4]",
+          "point_id": "2547977b-3b1f-5a88-9403-468355173247",
+          "rerank_score": 0.9343622326850891
+        }
+      ],
+      "rewritten_query": "What semester restriction applies to UMD CPT internship dates, and what does UMD ask for if the internship start date has already passed or will pass by the time ISSS reviews the application?",
+      "retrieval_and_rewrite_seconds": 1.3019890620198566,
+      "execution_status": "error",
+      "error_stage": "generation",
+      "error_type": "ClientError",
+      "error_code": 429,
+      "reference_outcome_match": null,
+      "latency_seconds": 1.4478105330199469
+    }
+  ]
+}

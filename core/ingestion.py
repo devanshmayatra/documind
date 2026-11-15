@@ -16,11 +16,17 @@ def read_text_file(file_path: str) -> str:
             continue
     return ""
 
-def extract_chunks_with_metadata(file_path: str, chunk_size: int = 1000, overlap: int = 100):
+def extract_chunks_with_metadata(
+        file_path: str, 
+        chunk_size: int = 1000, 
+        overlap: int = 100,
+        original_filename:str | None = None,
+        source_url: str | None = None,
+        publisher: str | None = None
+    ):
+    
     ext = os.path.splitext(file_path)[1].lower()
-    filename = os.path.basename(file_path)
-    # Strip temporary prefix if created via NamedTemporaryFile
-    clean_filename = filename.split("_", 1)[-1] if "_" in filename else filename
+    clean_filename = original_filename or os.path.basename(file_path)
     extracted_chunks = []
 
     splitter = RecursiveCharacterTextSplitter(
@@ -51,7 +57,7 @@ def extract_chunks_with_metadata(file_path: str, chunk_size: int = 1000, overlap
                     extracted_chunks.append({
                         "text": chunk.strip(),
                         "source": clean_filename,
-                        "page": 1
+                        "page": None
                     })
 
     elif ext in [".txt", ".md", ".csv"]:
@@ -62,7 +68,11 @@ def extract_chunks_with_metadata(file_path: str, chunk_size: int = 1000, overlap
                     extracted_chunks.append({
                         "text": chunk.strip(),
                         "source": clean_filename,
-                        "page": 1
+                        "page": None
                     })
 
+    for chunk in extracted_chunks:
+        chunk["source_url"] = source_url
+        chunk["publisher"] = publisher
+    
     return extracted_chunks

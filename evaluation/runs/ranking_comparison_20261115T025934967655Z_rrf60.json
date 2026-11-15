@@ -1,0 +1,146 @@
+{
+  "source_run": "ranking_comparison_20261115T025934967655Z.json",
+  "experiment": "equal_weight_hybrid_reranked_rrf",
+  "rrf_constant": 60,
+  "tie_break": "hybrid_rank",
+  "results": [
+    {
+      "case_id": "umd_cpt_offer_letter_001",
+      "supporting_rank": 5,
+      "point_ids": [
+        "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+        "99f81d70-105b-518a-a710-f540f4422263",
+        "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+        "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+        "2547977b-3b1f-5a88-9403-468355173247",
+        "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+        "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+        "2429fbc4-1e80-575b-a629-ed976cb70574",
+        "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+        "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+        "45efdee6-17c4-55a7-86b6-79b1ca194637",
+        "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+        "92f9661d-53f3-5bae-a832-0e976d610b95",
+        "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+        "ecf3e2a6-e613-5860-959a-d9bac5fffbd4"
+      ]
+    },
+    {
+      "case_id": "umd_cpt_remote_001",
+      "supporting_rank": 5,
+      "point_ids": [
+        "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+        "f549a802-c515-521c-8120-e79fefd63913",
+        "99f81d70-105b-518a-a710-f540f4422263",
+        "2429fbc4-1e80-575b-a629-ed976cb70574",
+        "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+        "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+        "45efdee6-17c4-55a7-86b6-79b1ca194637",
+        "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+        "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+        "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+        "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+        "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+        "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+        "2547977b-3b1f-5a88-9403-468355173247",
+        "62e77b2b-354b-5cd9-898b-1ece90e9c2cc"
+      ]
+    },
+    {
+      "case_id": "umd_cpt_authorization_001",
+      "supporting_rank": 1,
+      "point_ids": [
+        "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+        "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+        "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+        "2547977b-3b1f-5a88-9403-468355173247",
+        "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+        "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+        "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+        "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+        "932f906e-3e52-5c19-85a3-e1aa62f19065",
+        "2429fbc4-1e80-575b-a629-ed976cb70574",
+        "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+        "92f9661d-53f3-5bae-a832-0e976d610b95",
+        "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+        "f549a802-c515-521c-8120-e79fefd63913",
+        "d151d6a7-e07f-516c-8d84-d2b872c5e177"
+      ]
+    },
+    {
+      "case_id": "umd_cpt_processing_001",
+      "supporting_rank": 2,
+      "point_ids": [
+        "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+        "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+        "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+        "2429fbc4-1e80-575b-a629-ed976cb70574",
+        "99f81d70-105b-518a-a710-f540f4422263",
+        "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+        "45efdee6-17c4-55a7-86b6-79b1ca194637",
+        "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+        "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+        "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+        "2547977b-3b1f-5a88-9403-468355173247",
+        "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+        "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+        "f549a802-c515-521c-8120-e79fefd63913",
+        "4a95b113-edd3-53bd-a38d-ceb9cea70b06"
+      ]
+    },
+    {
+      "case_id": "umd_cpt_location_001",
+      "supporting_rank": 1,
+      "point_ids": [
+        "f549a802-c515-521c-8120-e79fefd63913",
+        "99f81d70-105b-518a-a710-f540f4422263",
+        "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+        "932f906e-3e52-5c19-85a3-e1aa62f19065",
+        "2429fbc4-1e80-575b-a629-ed976cb70574",
+        "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+        "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+        "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+        "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+        "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+        "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+        "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+        "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+        "2547977b-3b1f-5a88-9403-468355173247",
+        "790544ab-ced1-51b9-86a5-cf0b48a1487c"
+      ]
+    },
+    {
+      "case_id": "umd_cpt_summer_dates_001",
+      "supporting_rank": 1,
+      "point_ids": [
+        "2547977b-3b1f-5a88-9403-468355173247",
+        "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+        "2429fbc4-1e80-575b-a629-ed976cb70574",
+        "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+        "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+        "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+        "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+        "99f81d70-105b-518a-a710-f540f4422263",
+        "f549a802-c515-521c-8120-e79fefd63913",
+        "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+        "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+        "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+        "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+        "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+        "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a"
+      ]
+    }
+  ],
+  "metrics": {
+    "hit_at_1": {
+      "hits": 3,
+      "cases": 6,
+      "rate": 0.5
+    },
+    "hit_at_5": {
+      "hits": 6,
+      "cases": 6,
+      "rate": 1.0
+    }
+  }
+}

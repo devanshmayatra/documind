@@ -1,0 +1,115 @@
+{
+  "run_id": "20261115T023743524708Z",
+  "pipeline": "hybrid_rrf_flashrank",
+  "initial_k": 15,
+  "final_k": 5,
+  "latency_scope": "Query embedding, Qdrant retrieval, and reranking; excludes module initialization and answer generation",
+  "results": [
+    {
+      "case_id": "umd_cpt_offer_letter_001",
+      "question": "What information does UMD require in the employer offer letter for a CPT application?",
+      "status": "ok",
+      "latency_seconds": 0.9287470099807251,
+      "passages": [
+        {
+          "rank": 1,
+          "point_id": "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "source": "umd_cpt.txt",
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "page": null,
+          "rerank_score": 0.9865069389343262,
+          "text": "The support letter from the advisor must be on UMD letterhead and include an authorized signature.\nElective Internship courses such as UNIV099/ENCO099/BMGT can no longer be used for CPT course registration. Students must use courses within their department that are required for the completion of the degree.\nIf you are pursuing CPT in an optional term (Summer, Winter), please register for a full course of study in the required term immediately following your internship (Fall, Spring) before submitting your CPT authorization. If you do not require a full course of study to complete the program in that next required term, please register for all required courses and submit a request for part-time authorization on iTerp.\nStep 3. Submit a request in iTerp to obtain CPT authorization"
+        },
+        {
+          "rank": 2,
+          "point_id": "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "source": "umd_cpt.txt",
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "page": null,
+          "rerank_score": 0.956185519695282,
+          "text": "*Internship dates must be within the semester you are registered for the course associated with your CPT (see Step 2).You can find semester dates for each academic year here. If your internship start date has passed or will pass by the time ISSS reviews your CPT application, please include an email from your employer indicating a new later start date.\nClick here to see an example of an internship/co-op offer letter.\nStudents are urged to review the CPT checklist to confirm all required documents are uploaded and all necessary details are included in the offer letter. Any student working remotely on CPT must have this confirmed in the offer letter or in supporting documentation, the address where you will work remotely must also be mentioned by the employer.\nStep 2. Register for an academic component (course)\nRegister for an academic component (course) that is required for the completion of your degree."
+        },
+        {
+          "rank": 3,
+          "point_id": "2547977b-3b1f-5a88-9403-468355173247",
+          "source": "umd_cpt.txt",
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "page": null,
+          "rerank_score": 0.9437171220779419,
+          "text": "Table 1, row 4\nTERM: Summer 2027\nEarliest start date: May 21, 2027\nLatest end date: Aug 29, 2027\nFinal date to request and begin CPT authorization: July 31, 2027\nApplication Procedure\nStep 1. Obtain an internship/co-op offer letter\nObtain an internship/co-op offer letter from an employer which includes all of the following information:\nOfficial company letterhead\nAn authorized signature\nSpecific start and end dates of the internship/co-op*\nNumber of hours per week\nAddress of the workplace (if your employer address is different from the work site, please provide both addresses. No PO Box addresses)\nAmount of compensation\nJob description (specific job responsibilities)\nThe name of your supervisor during the internship/co-op\nThe specific term internship or co-op\nIf you are a Masters thesis/Ph.D. student in your research phase: a statement that the employer understands that this work will be incorporated as  part of your thesis/dissertation research."
+        },
+        {
+          "rank": 4,
+          "point_id": "99f81d70-105b-518a-a710-f540f4422263",
+          "source": "umd_cpt.txt",
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "page": null,
+          "rerank_score": 0.5033395886421204,
+          "text": "These messages communicate a narrower interpretation of when CPT may be considered an “integral part” of an established curriculum. Among other points, SEVP indicates that CPT should only be authorized when the practical training is required for all students in the program’s curriculum and the degree or program cannot be completed without it.\nWe recognize that this new CPT guidance may raise questions for students and academic departments. International Student & Scholar Services (ISSS) is carefully reviewing UMD’s CPT policy in light of these messages to assess the implications for our current CPT practices. We are working to analyze and interpret this new guidance to ensure F-1 students’ and UMD’s compliance with federal regulations."
+        },
+        {
+          "rank": 5,
+          "point_id": "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "source": "umd_cpt.txt",
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "page": null,
+          "rerank_score": 0.4242013394832611,
+          "text": "Student will be engaging in training/research for the same employer beginning in the Fall and continuing through Winter, or beginning in Winter and continuing through the duration of the Spring;\nStudent will be keeping the same number of hours per week for the duration of the internship; and\nAt the time of the CPT authorization application, student’s offer letter specifies the full start and end dates for the duration of the internship, including the employment that will occur during winter term.\nStudents that do not meet all three of these criteria should plan on registering for a winter term internship course in order to be authorized for CPT during the winter.\nEnding On-Campus Employment to Participate in CPT"
+        }
+      ]
+    },
+    {
+      "case_id": "umd_cpt_remote_001",
+      "question": "What does UMD require for documenting remote work in a CPT application?",
+      "status": "ok",
+      "latency_seconds": 0.5206371270178352,
+      "passages": [
+        {
+          "rank": 1,
+          "point_id": "f549a802-c515-521c-8120-e79fefd63913",
+          "source": "umd_cpt.txt",
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "page": null,
+          "rerank_score": 0.9719236493110657,
+          "text": "Only part-time CPT in student's final term (including summer)\nLocation:\nStudents are limited to CPT in the DC metro area during Fall/Spring semesters in order to fulfill their in-person study requirements.\nStudents must be physically present in the US during the CPT experience. CPT cannot be authorized for remote work that the student will conduct from outside the US.\nCPT can only be authorized for employers that have a physical US location (no P.O. Boxes)\nCPT's effect on Optional Practical Training (OPT)\nStudents who participate in 11+ months of full-time CPT become ineligible to apply for OPT\nThesis/dissertation students in final term\nPhD students in final semester: CPT must end no later than two weeks prior to the scheduled dissertation defense date, in accordance with the Graduate School’s submission requirements. If CPT was originally authorized beyond the permitted end date, the authorization period will be shortened accordingly."
+        },
+        {
+          "rank": 2,
+          "point_id": "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "source": "umd_cpt.txt",
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "page": null,
+          "rerank_score": 0.9374540448188782,
+          "text": "The support letter from the advisor must be on UMD letterhead and include an authorized signature.\nElective Internship courses such as UNIV099/ENCO099/BMGT can no longer be used for CPT course registration. Students must use courses within their department that are required for the completion of the degree.\nIf you are pursuing CPT in an optional term (Summer, Winter), please register for a full course of study in the required term immediately following your internship (Fall, Spring) before submitting your CPT authorization. If you do not require a full course of study to complete the program in that next required term, please register for all required courses and submit a request for part-time authorization on iTerp.\nStep 3. Submit a request in iTerp to obtain CPT authorization"
+        },
+        {
+          "rank": 3,
+          "point_id": "99f81d70-105b-518a-a710-f540f4422263",
+          "source": "umd_cpt.txt",
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "page": null,
+          "rerank_score": 0.8954911231994629,
+          "text": "These messages communicate a narrower interpretation of when CPT may be considered an “integral part” of an established curriculum. Among other points, SEVP indicates that CPT should only be authorized when the practical training is required for all students in the program’s curriculum and the degree or program cannot be completed without it.\nWe recognize that this new CPT guidance may raise questions for students and academic departments. International Student & Scholar Services (ISSS) is carefully reviewing UMD’s CPT policy in light of these messages to assess the implications for our current CPT practices. We are working to analyze and interpret this new guidance to ensure F-1 students’ and UMD’s compliance with federal regulations."
+        },
+        {
+          "rank": 4,
+          "point_id": "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "source": "umd_cpt.txt",
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "page": null,
+          "rerank_score": 0.1541215032339096,
+          "text": "While this work takes place, effective immediately, ISSS is pausing authorization of any unapproved CPT requests that are not required practical training experiences for all students in an academic degree program, required course or required for thesis or dissertation research.\nAlthough students may continue to submit CPT requests through iTerp, ISSS cannot accept CPT requests for UNIV099, ENCO099, BMGT099 and any other elective internships.\nStudents who already have authorized CPT should continue to follow the employer, location, dates, and other conditions listed on their current Form I-20. Students with pending  iTerp CPT requests should work with their employers to inform them of the pause.\nISSS understands the uncertainty this temporary pause causes. Please continue to monitor the ISSS website and university email for updates.\nEligibility for CPT\nEligibility, Limitations and Deadlines\nYou must have been maintaining F-1 status for at least:"
+        },
+        {
+          "rank": 5,
+          "point_id": "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "source": "umd_cpt.txt",
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "page": null,
+          "rerank_score": 0.08446034789085388,
+          "text": "Eligibility, Limitations and Deadlines\nYou must have been maintaining F-1 status for at least:\nSemester students: one academic year (2 semesters)\n12 Week Term students: 4 terms\nBe a student in good academic standing\nInternship/training/research must be a requirement for the degree or dissertation completion\nGPA requirements:\nUndergraduates: 2.00\nGraduates: 3.00\nStudents who change degree programs must complete one semester in the new program and receive a qualifying GPA before applying for CPT.\nThis includes; transfer students, Bachelors students who graduate and begin a graduate program and UMCP Masters students who begin a UMD PhD program.\nLimitations\nHours per week:\nNo more than 20 hours per week during the semester, including on campus work (part-time)\nNo maximum limit during school vacations (full-time)\nOnly part-time CPT in student's final term (including summer)\nLocation:"
+        }
+      ]
+    }
+  ]
+}

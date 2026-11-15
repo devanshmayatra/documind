@@ -1,0 +1,197 @@
+[
+  {
+    "id": "umd_cpt_offer_letter_001",
+    "question": "What information does UMD require in the employer offer letter for a CPT application?",
+    "split": "development",
+    "topic": "cpt",
+    "university": "umd_college_park",
+    "source_id": "umd_cpt",
+    "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+    "source_snapshot": "20261114T213307398026Z",
+    "relevant_passage": "Obtain an internship/co-op offer letter from an employer which includes all of the following information:",
+    "expected_key_facts": [
+      "Official company letterhead",
+      "An authorized signature",
+      "Specific internship/co-op start and end dates",
+      "Hours per week",
+      "Workplace address; both employer and work-site addresses if different; no PO Box addresses",
+      "Amount of compensation",
+      "Specific job responsibilities",
+      "Supervisor name",
+      "For master's thesis or Ph.D. students in their research phase, an employer statement that the work will be incorporated into thesis/dissertation research"
+    ],
+    "ambiguities": [
+      "The source says 'The specific term internship or co-op'; preserve this wording or flag its ambiguity rather than confidently interpreting it."
+    ],
+    "risk_level": "high",
+    "review_status": "manual_seed"
+  },
+  {
+    "id": "umd_cpt_remote_001",
+    "question": "What does UMD require for documenting remote work in a CPT application?",
+    "split": "development",
+    "topic": "cpt",
+    "university": "umd_college_park",
+    "source_id": "umd_cpt",
+    "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+    "source_snapshot": "20261114T213307398026Z",
+    "relevant_passage": "Any student working remotely on CPT must have this confirmed in the offer letter or in supporting documentation, the address where you will work remotely must also be mentioned by the employer.",
+    "expected_key_facts": [
+      "Remote work must be confirmed in the offer letter OR supporting documentation",
+      "The employer must mention the address where the student will work remotely"
+    ],
+    "ambiguities": [],
+    "risk_level": "high",
+    "review_status": "manual_seed"
+  },
+  {
+    "topic": "cpt",
+    "university": "umd_college_park",
+    "source_id": "umd_cpt",
+    "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+    "source_snapshot": "20261114T213307398026Z",
+    "id": "umd_cpt_authorization_001",
+    "question": "My CPT application is submitted. Can I start working before receiving the updated I-20?",
+    "relevant_passage": "You do not have the authorization to begin working until you receive this I-20 showing the employment authorization on the second page.",
+    "expected_key_facts": [
+      "Submitting an application does not authorize work",
+      "The student must receive the I-20 showing employment authorization on page 2 before beginning work"
+    ],
+    "risk_level": "high",
+    "split": "development",
+    "ambiguities": [],
+    "review_status": "manual_seed"
+  },
+  {
+    "topic": "cpt",
+    "university": "umd_college_park",
+    "source_id": "umd_cpt",
+    "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+    "source_snapshot": "20261114T213307398026Z",
+    "id": "umd_cpt_processing_001",
+    "question": "How long does UMD typically take to process a complete CPT request?",
+    "relevant_passage": "ISSS processes all requests for CPT as quickly as possible and typically within 3-5 business days. Requests are processed in the order they are received so as not to disadvantage other students who are in a similar rush to receive their authorization.",
+    "expected_key_facts": [
+      "Typical processing time is 3–5 business days",
+      "Requests are processed in the order received",
+      "Typical processing time is not a guaranteed completion date"
+    ],
+    "risk_level": "medium",
+    "split": "development",
+    "ambiguities": [],
+    "review_status": "manual_seed"
+  },
+  {
+    "topic": "cpt",
+    "university": "umd_college_park",
+    "source_id": "umd_cpt",
+    "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+    "source_snapshot": "20261114T213307398026Z",
+    "id": "umd_cpt_location_001",
+    "question": "Does UMD authorize CPT for remote work performed outside the United States?",
+    "relevant_passage": "Students must be physically present in the US during the CPT experience. CPT cannot be authorized for remote work that the student will conduct from outside the US.",
+    "expected_key_facts": [
+      "The snapshot requires physical presence in the United States during CPT",
+      "The snapshot says CPT cannot authorize remote work performed outside the United States"
+    ],
+    "risk_level": "high",
+    "split": "development",
+    "ambiguities": [],
+    "review_status": "manual_seed"
+  },
+  {
+    "topic": "cpt",
+    "university": "umd_college_park",
+    "source_id": "umd_cpt",
+    "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+    "source_snapshot": "20261114T213307398026Z",
+    "id": "umd_cpt_summer_dates_001",
+    "question": "What are the Summer 2027 CPT start, end, and request deadlines in this UMD snapshot?",
+    "relevant_passage": "TERM: Summer 2027\nEarliest start date: May 21, 2027\nLatest end date: Aug 29, 2027\nFinal date to request and begin CPT authorization: July 31, 2027",
+    "expected_key_facts": [
+      "Earliest start date: May 21, 2027",
+      "Latest end date: August 29, 2027",
+      "Final date to request AND begin CPT authorization: July 31, 2027"
+    ],
+    "risk_level": "high",
+    "split": "development",
+    "ambiguities": [],
+    "review_status": "manual_seed"
+  },
+  {
+    "topic": "cpt",
+    "university": "umd_college_park",
+    "source_id": "umd_cpt",
+    "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+    "source_snapshot": "20261114T213307398026Z",
+    "id": "umd_cpt_degree_change_001",
+    "question": "What additional CPT eligibility requirement applies after changing degree programs?",
+    "relevant_passage": "Students who change degree programs must complete one semester in the new program and receive a qualifying GPA before applying for CPT.",
+    "expected_key_facts": [
+      "Complete one semester in the new degree program",
+      "Receive a qualifying GPA before applying",
+      "These conditions alone do not establish that every CPT eligibility requirement is met"
+    ],
+    "risk_level": "high",
+    "split": "held_out",
+    "ambiguities": [],
+    "review_status": "manual_seed"
+  },
+  {
+    "topic": "cpt",
+    "university": "umd_college_park",
+    "source_id": "umd_cpt",
+    "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+    "source_snapshot": "20261114T213307398026Z",
+    "id": "umd_cpt_workshop_001",
+    "question": "Is attending UMD's CPT workshop mandatory before applying?",
+    "relevant_passage": "Please note that your attendance at this workshop is not required in order to apply for CPT.",
+    "expected_key_facts": [
+      "Workshop attendance is not required to apply for CPT"
+    ],
+    "risk_level": "medium",
+    "split": "held_out",
+    "ambiguities": [],
+    "review_status": "manual_seed"
+  },
+  {
+    "topic": "cpt",
+    "university": "umd_college_park",
+    "source_id": "umd_cpt",
+    "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+    "source_snapshot": "20261114T213307398026Z",
+    "id": "umd_cpt_winter_waiver_001",
+    "question": "What conditions does UMD list for waiving winter internship-course registration for a continuing internship?",
+    "relevant_passage": "Student will be engaging in training/research for the same employer beginning in the Fall and continuing through Winter, or beginning inWinter and continuing through the duration of the Spring;\nStudent will be keeping the same number of hours per week for the duration of the internship; and\nAt the time of the CPT authorization application, student’s offer letter specifies the full start and end dates for the duration of the internship, including the employment that will occur during winter term.",
+    "expected_key_facts": [
+      "All three listed conditions must be met",
+      "Same employer from Fall through Winter, or from Winter through the duration of Spring",
+      "Same weekly hours throughout the internship",
+      "At application, the offer letter specifies full internship dates including winter employment",
+      "The waiver concerns winter course registration, not a waiver of CPT authorization"
+    ],
+    "risk_level": "high",
+    "split": "held_out",
+    "ambiguities": [],
+    "review_status": "manual_seed"
+  },
+  {
+    "topic": "cpt",
+    "university": "umd_college_park",
+    "source_id": "umd_cpt",
+    "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+    "source_snapshot": "20261114T213307398026Z",
+    "id": "umd_cpt_research_exception_001",
+    "question": "Does submitting all required documents guarantee approval for exceptional full-time CPT during a semester?",
+    "relevant_passage": "The ISSS office will only consider an exception to permit full-time CPT authorization on a case-by-case basis for students engaging in a required research experience (799/898/899).\nNOTE: Exceptions are considered on a case-by-case basis, and having all of the above documentation does not in any way guarantee that the student will be approved for the exception.",
+    "expected_key_facts": [
+      "Submitting all documents does not guarantee approval",
+      "Exceptions are considered case by case",
+      "The described exception applies to required research experiences associated with 799/898/899"
+    ],
+    "risk_level": "high",
+    "split": "held_out",
+    "ambiguities": [],
+    "review_status": "manual_seed"
+  }
+]

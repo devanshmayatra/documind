@@ -3,13 +3,14 @@ import tempfile
 import os
 import time
 from dotenv import load_dotenv
+from urllib.parse import urlsplit
 
 load_dotenv(override=True)
 
 from core.ingestion import extract_chunks_with_metadata
 from core.qdrant_engine import upload_chunks, qdrant, COLLECTION_NAME
 from core.retriever import hybrid_search_and_rerank
-from core.generator import rewrite_query, ai_client
+from core.generator import rewrite_query, generate_grounded_answer
 
 # Page Config
 st.set_page_config(
@@ -144,6 +145,52 @@ def get_db_stats():
         pass
     return 0
 
+def format_page_label(page):
+    if page is None:
+        return "Page Unavailable"
+    return f"Page {page}"
+
+def render_sources(passages):
+    if not passages:
+        return
+
+    with st.expander(f"View {len(passages)} retrieved passages"):
+        for index, passage in enumerate(passages, start=1):
+            source = (
+                passage.get("source_title")
+                or passage.get("source")
+                or "Unknown source"
+            )
+            publisher = passage.get("publisher") or "Publisher unavailable"
+
+            st.text(f"[S{index}] {source}")
+            st.caption(f"Publisher: {publisher}")
+            st.caption(format_page_label(passage.get("page")))
+            st.caption(f"Retrieved on: {passage.get('retrieved_at') or 'Unknown'}")
+            st.caption(f"Source updated: {passage.get('source_updated_at') or 'Unknown'}")
+
+            text = passage.get("text") or ""
+            st.text(text)  
+
+            url = (passage.get("source_url") or "").strip()
+
+            try:
+                parsed = urlsplit(url)
+                valid_url = (
+                    parsed.scheme in {"https", "http"}
+                    and bool(parsed.hostname)
+                )
+            except ValueError:
+                valid_url = False
+
+            if valid_url:
+                st.link_button("Open source", url)
+            else:
+                st.caption("Source link unavailable")
+
+            if index < len(passages):
+                st.divider()
+
 # Sidebar Implementation
 with st.sidebar:
     st.markdown("### 🧠 DocuMind Engine")
@@ -175,7 +222,7 @@ with st.sidebar:
                     tmp_path = tmp.name
 
                 try:
-                    chunks = extract_chunks_with_metadata(tmp_path)
+                    chunks = extract_chunks_with_metadata(tmp_path, original_filename=file.name)
                     if chunks:
                         prog_bar.progress(
                             int(((idx + 0.5) / len(uploaded_files)) * 100), 
@@ -247,19 +294,7 @@ if not st.session_state.messages:
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
-        if "citations" in msg and msg["citations"]:
-            with st.expander(f"📚 View {len(msg['citations'])} Verified Sources"):
-                for cit in msg["citations"]:
-                    st.markdown(
-                        f"""
-                        <div class="citation-card">
-                            <strong>{cit['source']}</strong> &nbsp;|&nbsp; Page {cit['page']} &nbsp;|&nbsp; 
-                            <code>Score: {cit['score']:.3f}</code><br>
-                            <span style="color:#555; font-size:0.9rem;">"{cit['text'][:280]}..."</span>
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
+        render_sources(msg.get("citations", []))
 
 # Process Prompt (from chat_input or starter buttons)
 prompt = st.chat_input("Ask a question about your documents...")
@@ -273,59 +308,35 @@ if prompt:
         st.markdown(prompt)
 
     # 2. Contextual Query Rewriting & Retrieval
-    with st.status("🔍 Retrieving verified passages...", expanded=False) as status:
+    with st.status("🔍 Retrieving source passages...", expanded=False) as status:
         standalone_query = rewrite_query(prompt, st.session_state.messages[:-1])
         st.write(f"Refined search query: `{standalone_query}`")
         top_passages = hybrid_search_and_rerank(standalone_query)
         status.update(label="Relevant sources retrieved & reranked!", state="complete")
 
-    # 3. Formulate Grounded Instruction
-    context_blocks = "\n\n".join(
-        [f"[Source: {p['source']} (Page {p['page']})]\n{p['text']}" for p in top_passages]
-    )
-    system_instruction = (
-        "You are an enterprise knowledge retrieval agent. Answer using solely the excerpts provided below. "
-        "Keep answers concise, direct, and well-structured using bullet points where appropriate. "
-        "Cite the document name and page number for key facts. If the information is not present, "
-        "state that the knowledge base does not contain the answer.\n\n"
-        f"Context:\n{context_blocks}"
-    )
-
-    # 4. Stream Assistant Generation
+    # 3. Generate and check the answer
     with st.chat_message("assistant"):
-        response_placeholder = st.empty()
-        full_response = ""
-        
-        # Real-time token streaming
-        stream = ai_client.models.generate_content_stream(
-            model="models/gemini-3.6-flash",
-            contents=f"{system_instruction}\n\nQuestion: {prompt}"
-        )
-        for chunk in stream:
-            if chunk.text:
-                full_response += chunk.text
-                response_placeholder.markdown(full_response + "▌")
-        
-        response_placeholder.markdown(full_response)
+        with st.spinner(
+            "Preparing an answer and checking citation references…"
+        ):
+            result = generate_grounded_answer(
+                question=standalone_query,
+                passages=top_passages
+            )
 
-        # 5. Render Expandable Citations
-        if top_passages:
-            with st.expander(f"📚 View {len(top_passages)} Verified Sources"):
-                for p in top_passages:
-                    st.markdown(
-                        f"""
-                        <div class="citation-card">
-                            <strong>{p['source']}</strong> &nbsp;|&nbsp; Page {p['page']} &nbsp;|&nbsp; 
-                            <code>Score: {p['score']:.3f}</code><br>
-                            <span style="color:#555; font-size:0.9rem;">"{p['text'][:280]}..."</span>
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
+        if result["citation_errors"]:
+            print(
+                "[Citation check]",
+                "; ".join(result["citation_errors"])
+            )
 
-    # Save to history
+        st.markdown(result["answer"])
+        render_sources(top_passages)
+
+    # 4. Save the displayed answer and its generation status
     st.session_state.messages.append({
         "role": "assistant",
-        "content": full_response,
-        "citations": top_passages
+        "content": result["answer"],
+        "citations": top_passages,
+        "generation_status": result["status"]
     })

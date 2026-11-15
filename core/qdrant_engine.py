@@ -26,25 +26,65 @@ EMBEDDING_MODEL = "models/gemini-embedding-001"
 EMBEDDING_DIM = 3072
 
 
+def ensure_source_id_index(payload_schema):
+    """Add the source filter index without replacing an existing index."""
+    existing = payload_schema.get("source_id")
+    if existing is not None:
+        if existing.data_type != models.PayloadSchemaType.KEYWORD:
+            raise ValueError(
+                f"Collection '{COLLECTION_NAME}' has a non-keyword source_id index. "
+                "Existing index and data were preserved."
+            )
+        return
+
+    qdrant.create_payload_index(
+        collection_name=COLLECTION_NAME,
+        field_name="source_id",
+        field_schema=models.PayloadSchemaType.KEYWORD,
+        wait=True,
+    )
+
+
 def setup_collection():
-    """Initializes the Qdrant collection with dual dense and sparse vector configurations."""
+    """Ensure collection compatibility and its source index; preserve existing data."""
+    
     if qdrant.collection_exists(COLLECTION_NAME):
         info = qdrant.get_collection(COLLECTION_NAME)
-        dense_cfg = info.config.params.vectors.get("dense")
-        if dense_cfg and dense_cfg.size != EMBEDDING_DIM:
-            qdrant.delete_collection(COLLECTION_NAME)
-
-    if not qdrant.collection_exists(COLLECTION_NAME):
-        qdrant.create_collection(
-            collection_name=COLLECTION_NAME,
-            vectors_config={
-                "dense": models.VectorParams(
-                    size=EMBEDDING_DIM, distance=models.Distance.COSINE
-                )
-            },
-            sparse_vectors_config={"sparse": models.SparseVectorParams()},
-        )
-
+        vectors_config = info.config.params.vectors
+        
+        if not isinstance(vectors_config, dict) or "dense" not in vectors_config:
+            raise ValueError(
+                f"Collection '{COLLECTION_NAME}' is missing the expected"
+                "'dense' vector configuration. Existing configuration was preserved."
+            )
+        
+        dense_config = vectors_config["dense"]
+        
+        if dense_config.size != EMBEDDING_DIM:
+            raise ValueError(
+                f"Collection '{COLLECTION_NAME}' uses vectors with "
+                f"{dense_config.size} dimensions, but this application "
+                f"expects {EMBEDDING_DIM}. Existing data was preserved."
+            )
+        
+        ensure_source_id_index(info.payload_schema)
+        return
+    
+    qdrant.create_collection(
+        collection_name=COLLECTION_NAME,
+        vectors_config={
+            "dense":models.VectorParams(
+                size=EMBEDDING_DIM,
+                distance=models.Distance.COSINE
+            )
+        },
+        sparse_vectors_config={
+            "sparse":models.SparseVectorParams(
+                modifier=models.Modifier.IDF
+            )
+        },
+    )
+    ensure_source_id_index({})
 
 def get_dense_vector(text: str) -> list[float]:
     """Retrieves dense embedding for a single string (used during user query retrieval)."""
@@ -113,7 +153,7 @@ def upload_chunks(chunks: list[dict], batch_size: int = 10):
         for item, d_vec, s_vec in zip(batch, dense_vectors, sparse_vectors):
             points.append(
                 models.PointStruct(
-                    id=str(uuid.uuid4()),
+                    id=item.get("chunk_id") or str(uuid.uuid4()),
                     vector={
                         "dense": d_vec,
                         "sparse": models.SparseVector(
@@ -130,4 +170,4 @@ def upload_chunks(chunks: list[dict], batch_size: int = 10):
     # Upsert to Qdrant
     if points:
         for i in range(0, len(points), 100):
-            qdrant.upsert(collection_name=COLLECTION_NAME, points=points[i : i + 100])
+            qdrant.upsert(collection_name=COLLECTION_NAME, points=points[i : i + 100], wait=True)

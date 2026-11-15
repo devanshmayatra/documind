@@ -1,0 +1,24 @@
+{
+    "source_snapshot": "20261114T213307398026Z",
+    "label_scope": "Selected sufficient supporting passages; not exhaustive relevance judgments",
+    "cases": {
+        "umd_cpt_offer_letter_001": [
+            "2547977b-3b1f-5a88-9403-468355173247"
+        ],
+        "umd_cpt_remote_001": [
+            "4a95b113-edd3-53bd-a38d-ceb9cea70b06"
+        ],
+        "umd_cpt_authorization_001": [
+            "7f066de9-0a5c-55b1-adf8-4834a0e042c3"
+        ],
+        "umd_cpt_processing_001": [
+            "7f066de9-0a5c-55b1-adf8-4834a0e042c3"
+        ],
+        "umd_cpt_location_001": [
+            "f549a802-c515-521c-8120-e79fefd63913"
+        ],
+        "umd_cpt_summer_dates_001": [
+            "2547977b-3b1f-5a88-9403-468355173247"
+        ]
+    }
+}

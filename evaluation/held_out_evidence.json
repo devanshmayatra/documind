@@ -1,0 +1,58 @@
+{
+    "source_snapshot": "20261114T213307398026Z",
+    "label_scope": "Selected evidence groups for complete expected-fact coverage",
+    "cases": {
+        "umd_cpt_degree_change_001": {
+            "evidence_groups": [
+                {
+                    "requirement": "New-program semester and qualifying GPA",
+                    "point_ids": [
+                        "2429fbc4-1e80-575b-a629-ed976cb70574"
+                    ]
+                }
+            ]
+        },
+        "umd_cpt_workshop_001": {
+            "evidence_groups": [
+                {
+                    "requirement": "Workshop attendance is not required",
+                    "point_ids": [
+                        "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a"
+                    ]
+                }
+            ]
+        },
+        "umd_cpt_winter_waiver_001": {
+            "evidence_groups": [
+                {
+                    "requirement": "Winter course-registration waiver and requirement to meet all criteria",
+                    "point_ids": [
+                        "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a"
+                    ]
+                },
+                {
+                    "requirement": "All three continuing-internship conditions",
+                    "point_ids": [
+                        "790544ab-ced1-51b9-86a5-cf0b48a1487c"
+                    ]
+                }
+            ]
+        },
+        "umd_cpt_research_exception_001": {
+            "evidence_groups": [
+                {
+                    "requirement": "Case-by-case exception for required research experiences 799/898/899",
+                    "point_ids": [
+                        "ecf3e2a6-e613-5860-959a-d9bac5fffbd4"
+                    ]
+                },
+                {
+                    "requirement": "Complete documentation does not guarantee approval",
+                    "point_ids": [
+                        "62e77b2b-354b-5cd9-898b-1ece90e9c2cc"
+                    ]
+                }
+            ]
+        }
+    }
+}
