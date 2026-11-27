@@ -1,3 +1,9 @@
+# Evaluation notes
+
+The [32-question retrieval comparison](#expanded-32-question-retrieval-comparison-2026-11-26-eastern)
+is the latest three-way comparison. Earlier experiments and generation checks
+are recorded below in chronological order.
+
 ## Initial CPT retrieval diagnostics
 
 Configuration:
@@ -545,3 +551,34 @@ The Docker image built and returned HTTP 200 from Streamlit's health endpoint.
 A separate in-container AppTest loaded the public UI with three saved source
 snapshots and uploads disabled. All 32 offline tests and the offline Streamlit
 checks passed. Deployment to a public host was outside this run.
+
+## Expanded 32-question retrieval comparison (2026-11-26 Eastern)
+
+The expanded source-authored set includes 18 CPT, seven on-campus employment,
+and seven unpaid-work questions. Labels were written before running the three
+variants and matched against the indexed versions of the three official UMD
+snapshots (23, four, and six passages). Each evidence group is required for
+complete coverage. Multiple matching passages can satisfy the same group.
+The set overlaps topics in earlier development and held-out checks. It was
+created from the indexed material and is not an independent held-out set.
+
+The same Gemini embedding was shared between dense-only and hybrid per
+question. Both retrieved 15 candidates from the live collection. FlashRank
+reordered the hybrid list. The run waited five seconds between questions,
+completed all 32, and used no generation calls. The report records snapshot
+hashes, matching evidence IDs, and rankings. Results reflect the labeled
+passages and these questions, so apparent misses can include unlabeled
+support. The evaluation does not measure answer quality or live traffic.
+
+| Retrieval | Hit@1 | Hit@5 | Complete evidence @4 |
+| --- | ---: | ---: | ---: |
+| Dense only | 24/32 | 31/32 | 31/32 |
+| Hybrid | 25/32 | 31/32 | 30/32 |
+| Hybrid + FlashRank | 24/32 | 32/32 | 31/32 |
+
+FlashRank moved optional-internship evidence from rank 6 to 3 and the
+fall/spring geographic limit from rank 5 to 1 relative to hybrid. It pushed
+the research-exception caveat about approval from rank 2 to 14, leaving
+that case with incomplete evidence at the production cutoff.
+[Labeled question set](retrieval_comparison.json) ·
+[Saved rankings and evidence IDs](runs/retrieval_comparison_20261127T012946079043Z.json)

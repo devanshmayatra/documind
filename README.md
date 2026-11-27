@@ -73,24 +73,6 @@ durable reuse. Keep the database private; never serve it as a download.
 
 Offline checks: `python -B -m unittest discover -s tests -v`.
 
-### Live evaluation
-
-Run these suites sequentially from the project root. They use the configured
-Gemini account and pause 30 seconds between cases. Set
-`F1_EVAL_PAUSE_SECONDS` to a longer interval for a lower quota.
-
-```sh
-python -m scripts.compare_rankings
-python -m scripts.evaluate_held_out
-python -m scripts.evaluate_generation
-python -m scripts.evaluate_end_to_end
-```
-
-The first two use the original CPT point labels, including the previously
-inspected held-out cases. Generation uses supplied evidence. End-to-end
-cases retrieve live evidence, including one question for each additional
-UMD source. Each script saves a separate report under `evaluation/runs/`.
-
 ## F-1 Compass interface
 
 The registry includes UMD ISSS pages for CPT, on-campus employment and unpaid work.
@@ -105,11 +87,50 @@ live API calls, run `streamlit run tests/ui_preview.py --server.port 8502`.
 The preview uses one recorded development answer and is not a deployment
 entry point. The normal entry point remains `streamlit run app.py`.
 
-### Retrieval results
+## Evaluation
 
-With hybrid retrieval and FlashRank, a labeled supporting passage ranked
-first for 4 of 6 CPT development questions and appeared in the top five
-for 5 of 6. At the production cutoff of four passages, all labeled evidence
-groups were retrieved for 3 of 4 previously inspected CPT questions.
-These counts describe the labeled cases and their indexed corpus.
-See [evaluation notes](evaluation/notes.md) for run IDs and limitations.
+### 32-question retrieval comparison
+
+Run the three-way comparison against the indexed snapshots with
+`python -m scripts.evaluate_retrieval_comparison`. It makes one embedding
+request per question, waits five seconds between cases by default
+(`F1_EVAL_PAUSE_SECONDS` overrides this), and saves per-case rankings
+and evidence labels under `evaluation/runs/`.
+
+All three variants completed the same 32 labeled questions. The set covers
+18 CPT, seven on-campus employment, and seven unpaid-work questions.
+
+| Retrieval | Hit@1 | Hit@5 | Complete evidence @4 |
+| --- | ---: | ---: | ---: |
+| Dense only | 24/32 | 31/32 | 31/32 |
+| Hybrid (dense + BM42) | 25/32 | 31/32 | 30/32 |
+| Hybrid + FlashRank | 24/32 | 32/32 | 31/32 |
+
+Hit@K requires at least one labeled supporting passage. Complete evidence
+requires a passage for each labeled evidence group within the four passages
+used for generation. FlashRank recovered the optional-internship and
+geographic-limit passages inside the top four, but moved one required
+research-exception passage from rank 2 to rank 14. Dense and reranked
+retrieval tied on complete evidence at the production cutoff.
+
+The questions were authored from three indexed source snapshots. The results
+measure retrieval on those questions. [Question set](evaluation/retrieval_comparison.json) ·
+[Saved run](evaluation/runs/retrieval_comparison_20261127T012946079043Z.json) ·
+[Method and limitations](evaluation/notes.md#expanded-32-question-retrieval-comparison-2026-11-26-eastern)
+
+### Earlier retrieval and generation suites
+
+Run these suites sequentially from the project root. They use the configured
+Gemini account and pause 30 seconds between cases by default. Set
+`F1_EVAL_PAUSE_SECONDS` to adjust the interval.
+
+```sh
+python -m scripts.compare_rankings
+python -m scripts.evaluate_held_out
+python -m scripts.evaluate_generation
+python -m scripts.evaluate_end_to_end
+```
+
+The first two use the original CPT point labels. The generation suite uses
+supplied evidence. The end-to-end suite uses live retrieval and generation.
+Each script saves a report under `evaluation/runs/`.

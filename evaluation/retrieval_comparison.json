@@ -1,0 +1,372 @@
+[
+  {
+    "id": "cpt_before_start",
+    "source": "umd_cpt",
+    "question": "Is authorization needed before starting unpaid off-campus training for CPT?",
+    "evidence": [
+      [
+        "BEFORE you begin working in any paid or unpaid experience"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_optional",
+    "source": "umd_cpt",
+    "question": "Which category does UMD point students to for a non-required internship?",
+    "evidence": [
+      [
+        "non-required internship experience should review our website on pre-completion OPT"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_processing",
+    "source": "umd_cpt",
+    "question": "How many business days does ISSS usually take to process CPT?",
+    "evidence": [
+      [
+        "typically within 3-5 business days",
+        "processing time in iTerp for CPT can take between 3-5 business days"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_existing_pause",
+    "source": "umd_cpt",
+    "question": "What instructions apply to someone who already has CPT approval when the UMD pause begins?",
+    "evidence": [
+      [
+        "Students who already have authorized CPT should continue to follow"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_time_status",
+    "source": "umd_cpt",
+    "question": "How long must a semester student have maintained F-1 status before qualifying for CPT?",
+    "evidence": [
+      [
+        "Semester students: one academic year (2 semesters)"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_gpa",
+    "source": "umd_cpt",
+    "question": "What minimum GPAs does UMD list for undergraduate and graduate CPT applicants?",
+    "evidence": [
+      [
+        "Undergraduates: 2.00"
+      ],
+      [
+        "Graduates: 3.00"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_switch_degree",
+    "source": "umd_cpt",
+    "question": "How does switching degree programs affect when a student can apply for CPT?",
+    "evidence": [
+      [
+        "complete one semester in the new program and receive a qualifying GPA"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_final_term",
+    "source": "umd_cpt",
+    "question": "Does UMD permit full-time CPT in the final summer term?",
+    "evidence": [
+      [
+        "Only part-time CPT in student's final term (including summer)"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_geography",
+    "source": "umd_cpt",
+    "question": "What region does UMD restrict CPT to in fall and spring?",
+    "evidence": [
+      [
+        "limited to CPT in the DC metro area"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_remote_abroad",
+    "source": "umd_cpt",
+    "question": "Can the CPT internship be done remotely from another country?",
+    "evidence": [
+      [
+        "cannot be authorized for remote work that the student will conduct from outside the US"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_opt_impact",
+    "source": "umd_cpt",
+    "question": "What does the snapshot say about how extended full-time CPT affects OPT eligibility?",
+    "evidence": [
+      [
+        "11+ months of full-time CPT become ineligible"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_defense",
+    "source": "umd_cpt",
+    "question": "How do CPT end dates differ for final-semester doctoral and master's thesis students?",
+    "evidence": [
+      [
+        "two weeks prior to the scheduled dissertation defense date"
+      ],
+      [
+        "cannot be authorized beyond the thesis defense date"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_winter_dates",
+    "source": "umd_cpt",
+    "question": "What is the latest date to request and start Winter 2027 CPT in the snapshot?",
+    "evidence": [
+      [
+        "TERM: Winter 2027"
+      ],
+      [
+        "Jan 8, 2027"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_letter_addresses",
+    "source": "umd_cpt",
+    "question": "Which addresses belong on a CPT offer letter when the company and worksite are different?",
+    "evidence": [
+      [
+        "if your employer address is different from the work site, please provide both addresses"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_late_start",
+    "source": "umd_cpt",
+    "question": "What should the employer provide when the internship start date will pass before ISSS review?",
+    "evidence": [
+      [
+        "will pass by the time ISSS reviews your CPT application"
+      ],
+      [
+        "email from your employer indicating a new later start date"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_i20",
+    "source": "umd_cpt",
+    "question": "Can a student start work while waiting for the approved I-20 after submitting CPT?",
+    "evidence": [
+      [
+        "You do not have the authorization to begin working until you receive this I-20"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_waiver",
+    "source": "umd_cpt",
+    "question": "What does UMD require to waive a separate winter internship course for a continuing placement?",
+    "evidence": [
+      [
+        "same employer beginning in the Fall and continuing through Winter"
+      ],
+      [
+        "same number of hours per week"
+      ],
+      [
+        "specifies the full start and end dates"
+      ]
+    ]
+  },
+  {
+    "id": "cpt_exception",
+    "source": "umd_cpt",
+    "question": "Is an exception for full-time research CPT during the semester automatic after submitting the documents?",
+    "evidence": [
+      [
+        "will only consider an exception to permit full-time CPT authorization"
+      ],
+      [
+        "does not in any way guarantee"
+      ]
+    ]
+  },
+  {
+    "id": "campus_forms",
+    "source": "umd_on_campus",
+    "question": "Which payroll forms does UMD list for F-1 on-campus employment, and is ISSS clearance needed?",
+    "evidence": [
+      [
+        "no clearance is needed from ISSS for on-campus employment"
+      ],
+      [
+        "I-9 form"
+      ],
+      [
+        "W-4 form"
+      ]
+    ]
+  },
+  {
+    "id": "campus_bookstore",
+    "source": "umd_on_campus",
+    "question": "When can work for an outside organization located on campus count as on-campus employment?",
+    "evidence": [
+      [
+        "only if they provide direct services to students"
+      ]
+    ]
+  },
+  {
+    "id": "campus_midweek",
+    "source": "umd_on_campus",
+    "question": "How is the workweek counted when classes begin in the middle of it?",
+    "evidence": [
+      [
+        "The work week for on-campus positions runs from Sunday to Saturday"
+      ],
+      [
+        "student should ensure that all work for that week is kept to 20 hours per week or less"
+      ]
+    ]
+  },
+  {
+    "id": "campus_break",
+    "source": "umd_on_campus",
+    "question": "Does the on-campus work limit change during summer and winter breaks?",
+    "evidence": [
+      [
+        "maximum of 20 hours per week during the semester and may work full time on campus during the summer and winter breaks"
+      ]
+    ]
+  },
+  {
+    "id": "campus_assistant",
+    "source": "umd_on_campus",
+    "question": "Can someone with a full graduate assistantship take another job during the academic year?",
+    "evidence": [
+      [
+        "students with full-time assistantships may not undertake additional on- or off-campus employment during the academic year"
+      ]
+    ]
+  },
+  {
+    "id": "campus_tutoring",
+    "source": "umd_on_campus",
+    "question": "Does privately tutoring on campus count if the student is not paid by UMD?",
+    "evidence": [
+      [
+        "Not all positions that take place on campus are considered on-campus work"
+      ],
+      [
+        "private tutoring (not paid directly by UMD)"
+      ]
+    ]
+  },
+  {
+    "id": "campus_offsite",
+    "source": "umd_on_campus",
+    "question": "What makes an off-campus location educationally affiliated for an on-campus job?",
+    "evidence": [
+      [
+        "affiliation is associated with the University's established curriculum"
+      ],
+      [
+        "employment must be directly related to the student's educational program"
+      ]
+    ]
+  },
+  {
+    "id": "unpaid_volunteer",
+    "source": "umd_unpaid_work",
+    "question": "What four conditions does ISSS give for volunteering?",
+    "evidence": [
+      [
+        "No expectation of compensation"
+      ],
+      [
+        "The volunteer cannot displace a genuine position"
+      ],
+      [
+        "previously paid and/or expects to be hired and paid"
+      ],
+      [
+        "non-profit organization for public service, religious or humanitarian objective"
+      ]
+    ]
+  },
+  {
+    "id": "unpaid_previous_job",
+    "source": "umd_unpaid_work",
+    "question": "Can someone volunteer by doing the same duties they were previously paid to do?",
+    "evidence": [
+      [
+        "services for which he or she was previously paid"
+      ]
+    ]
+  },
+  {
+    "id": "unpaid_difference",
+    "source": "umd_unpaid_work",
+    "question": "How does UMD distinguish volunteering from unpaid internships?",
+    "evidence": [
+      [
+        "Unpaid internships, on the other hand, do not usually qualify as \"volunteer\" activity"
+      ]
+    ]
+  },
+  {
+    "id": "unpaid_authorization",
+    "source": "umd_unpaid_work",
+    "question": "When should an international student get authorization for an unpaid internship?",
+    "evidence": [
+      [
+        "receive authorization to participate in unpaid internships before starting the training",
+        "the student receives authorization for Curricular Practical Training"
+      ]
+    ]
+  },
+  {
+    "id": "unpaid_reimbursement",
+    "source": "umd_unpaid_work",
+    "question": "Why might a check for lunch or travel be a problem on an unpaid internship without approval?",
+    "evidence": [
+      [
+        "check for lunch and transportation expenses"
+      ],
+      [
+        "evidence of unauthorized employment"
+      ]
+    ]
+  },
+  {
+    "id": "unpaid_course",
+    "source": "umd_unpaid_work",
+    "question": "What class enrollment does UMD associate with documenting practical training for F-1 students?",
+    "evidence": [
+      [
+        "F-1 students must enroll in a course for which experiential learning is a requirement"
+      ]
+    ]
+  },
+  {
+    "id": "unpaid_supervision",
+    "source": "umd_unpaid_work",
+    "question": "What does the unpaid internship page say about replacing employees and supervising interns?",
+    "evidence": [
+      [
+        "The intern does not displace regular employees, but works under close supervision of existing staff"
+      ]
+    ]
+  }
+]

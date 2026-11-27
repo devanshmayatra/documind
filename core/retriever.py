@@ -16,6 +16,8 @@ def retrieve_candidates(
     query: str,
     mode: str = "hybrid",
     initial_k: int = 15,
+    *,
+    dense_vector: list[float] | None = None,
 ):
     """Retrieve candidates without reranking."""
     if mode not in {"dense", "sparse", "hybrid"}:
@@ -26,7 +28,7 @@ def retrieve_candidates(
 
     query_options = {}
 
-    if mode in {"dense", "hybrid"}:
+    if mode in {"dense", "hybrid"} and dense_vector is None:
         dense_vector = get_dense_vector(query)
 
     if mode in {"sparse", "hybrid"}:

@@ -1,0 +1,2319 @@
+{
+  "collection": "resume_rag_kb",
+  "snapshots": {
+    "umd_cpt": {
+      "indexed_passages": 23,
+      "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+      "content_sha256": "29336949f9f65e92888ed38f755bee7ed275a11f7c34500cf87c4ebee141e60c"
+    },
+    "umd_on_campus": {
+      "indexed_passages": 4,
+      "retrieved_at": "2026-11-26T19:48:07.975501+00:00",
+      "content_sha256": "c9070ef42607b4d7265d9141d4bf9dd582b30aaad66145ec5df8aa7590cd7ea4"
+    },
+    "umd_unpaid_work": {
+      "indexed_passages": 6,
+      "retrieved_at": "2026-11-26T19:48:08.091994+00:00",
+      "content_sha256": "ae3b54bfb3914daeff2e3fccff333ad2295190e1ca2393dba75688d21dbf8123"
+    }
+  },
+  "initial_k": 15,
+  "attempted": 32,
+  "completed": 32,
+  "totals": {
+    "dense": {
+      "hit_at_1": 24,
+      "hit_at_5": 31,
+      "complete_at_4": 31
+    },
+    "hybrid": {
+      "hit_at_1": 25,
+      "hit_at_5": 31,
+      "complete_at_4": 30
+    },
+    "hybrid_reranked": {
+      "hit_at_1": 24,
+      "hit_at_5": 32,
+      "complete_at_4": 31
+    }
+  },
+  "results": [
+    {
+      "id": "cpt_before_start",
+      "source": "umd_cpt",
+      "question": "Is authorization needed before starting unpaid off-campus training for CPT?",
+      "evidence": [
+        [
+          "BEFORE you begin working in any paid or unpaid experience"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "932f906e-3e52-5c19-85a3-e1aa62f19065"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109"
+        ],
+        "hybrid": [
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a"
+        ],
+        "hybrid_reranked": [
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "718175b7-6873-5d04-9b8f-95d4866232d4"
+        ]
+      }
+    },
+    {
+      "id": "cpt_optional",
+      "source": "umd_cpt",
+      "question": "Which category does UMD point students to for a non-required internship?",
+      "evidence": [
+        [
+          "non-required internship experience should review our website on pre-completion OPT"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "932f906e-3e52-5c19-85a3-e1aa62f19065"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04"
+        ],
+        "hybrid": [
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109"
+        ],
+        "hybrid_reranked": [
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109"
+        ]
+      }
+    },
+    {
+      "id": "cpt_processing",
+      "source": "umd_cpt",
+      "question": "How many business days does ISSS usually take to process CPT?",
+      "evidence": [
+        [
+          "typically within 3-5 business days",
+          "processing time in iTerp for CPT can take between 3-5 business days"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc"
+        ],
+        "hybrid": [
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637"
+        ],
+        "hybrid_reranked": [
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "c710c61b-b746-5461-8824-35c417d43213"
+        ]
+      }
+    },
+    {
+      "id": "cpt_existing_pause",
+      "source": "umd_cpt",
+      "question": "What instructions apply to someone who already has CPT approval when the UMD pause begins?",
+      "evidence": [
+        [
+          "Students who already have authorized CPT should continue to follow"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0"
+        ],
+        "hybrid": [
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc"
+        ],
+        "hybrid_reranked": [
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "c710c61b-b746-5461-8824-35c417d43213"
+        ]
+      }
+    },
+    {
+      "id": "cpt_time_status",
+      "source": "umd_cpt",
+      "question": "How long must a semester student have maintained F-1 status before qualifying for CPT?",
+      "evidence": [
+        [
+          "Semester students: one academic year (2 semesters)"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "2429fbc4-1e80-575b-a629-ed976cb70574"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "92f9661d-53f3-5bae-a832-0e976d610b95"
+        ],
+        "hybrid": [
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0"
+        ],
+        "hybrid_reranked": [
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "718175b7-6873-5d04-9b8f-95d4866232d4"
+        ]
+      }
+    },
+    {
+      "id": "cpt_gpa",
+      "source": "umd_cpt",
+      "question": "What minimum GPAs does UMD list for undergraduate and graduate CPT applicants?",
+      "evidence": [
+        [
+          "Undergraduates: 2.00"
+        ],
+        [
+          "Graduates: 3.00"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "2429fbc4-1e80-575b-a629-ed976cb70574"
+        ],
+        [
+          "2429fbc4-1e80-575b-a629-ed976cb70574"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04"
+        ],
+        "hybrid": [
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3"
+        ],
+        "hybrid_reranked": [
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0"
+        ]
+      }
+    },
+    {
+      "id": "cpt_switch_degree",
+      "source": "umd_cpt",
+      "question": "How does switching degree programs affect when a student can apply for CPT?",
+      "evidence": [
+        [
+          "complete one semester in the new program and receive a qualifying GPA"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "2429fbc4-1e80-575b-a629-ed976cb70574"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637"
+        ],
+        "hybrid": [
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0"
+        ],
+        "hybrid_reranked": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0"
+        ]
+      }
+    },
+    {
+      "id": "cpt_final_term",
+      "source": "umd_cpt",
+      "question": "Does UMD permit full-time CPT in the final summer term?",
+      "evidence": [
+        [
+          "Only part-time CPT in student's final term (including summer)"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "f549a802-c515-521c-8120-e79fefd63913"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06"
+        ],
+        "hybrid": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "92f9661d-53f3-5bae-a832-0e976d610b95"
+        ],
+        "hybrid_reranked": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "c710c61b-b746-5461-8824-35c417d43213"
+        ]
+      }
+    },
+    {
+      "id": "cpt_geography",
+      "source": "umd_cpt",
+      "question": "What region does UMD restrict CPT to in fall and spring?",
+      "evidence": [
+        [
+          "limited to CPT in the DC metro area"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "f549a802-c515-521c-8120-e79fefd63913"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06"
+        ],
+        "hybrid": [
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3"
+        ],
+        "hybrid_reranked": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3"
+        ]
+      }
+    },
+    {
+      "id": "cpt_remote_abroad",
+      "source": "umd_cpt",
+      "question": "Can the CPT internship be done remotely from another country?",
+      "evidence": [
+        [
+          "cannot be authorized for remote work that the student will conduct from outside the US"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "f549a802-c515-521c-8120-e79fefd63913"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4"
+        ],
+        "hybrid": [
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564"
+        ],
+        "hybrid_reranked": [
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "c710c61b-b746-5461-8824-35c417d43213"
+        ]
+      }
+    },
+    {
+      "id": "cpt_opt_impact",
+      "source": "umd_cpt",
+      "question": "What does the snapshot say about how extended full-time CPT affects OPT eligibility?",
+      "evidence": [
+        [
+          "11+ months of full-time CPT become ineligible"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "f549a802-c515-521c-8120-e79fefd63913"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a"
+        ],
+        "hybrid": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04"
+        ],
+        "hybrid_reranked": [
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04"
+        ]
+      }
+    },
+    {
+      "id": "cpt_defense",
+      "source": "umd_cpt",
+      "question": "How do CPT end dates differ for final-semester doctoral and master's thesis students?",
+      "evidence": [
+        [
+          "two weeks prior to the scheduled dissertation defense date"
+        ],
+        [
+          "cannot be authorized beyond the thesis defense date"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "f549a802-c515-521c-8120-e79fefd63913"
+        ],
+        [
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637"
+        ],
+        "hybrid": [
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a"
+        ],
+        "hybrid_reranked": [
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb"
+        ]
+      }
+    },
+    {
+      "id": "cpt_winter_dates",
+      "source": "umd_cpt",
+      "question": "What is the latest date to request and start Winter 2027 CPT in the snapshot?",
+      "evidence": [
+        [
+          "TERM: Winter 2027"
+        ],
+        [
+          "Jan 8, 2027"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac"
+        ],
+        [
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065"
+        ],
+        "hybrid": [
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "2429fbc4-1e80-575b-a629-ed976cb70574"
+        ],
+        "hybrid_reranked": [
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177"
+        ]
+      }
+    },
+    {
+      "id": "cpt_letter_addresses",
+      "source": "umd_cpt",
+      "question": "Which addresses belong on a CPT offer letter when the company and worksite are different?",
+      "evidence": [
+        [
+          "if your employer address is different from the work site, please provide both addresses"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "2547977b-3b1f-5a88-9403-468355173247"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a"
+        ],
+        "hybrid": [
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "c710c61b-b746-5461-8824-35c417d43213"
+        ],
+        "hybrid_reranked": [
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "c710c61b-b746-5461-8824-35c417d43213"
+        ]
+      }
+    },
+    {
+      "id": "cpt_late_start",
+      "source": "umd_cpt",
+      "question": "What should the employer provide when the internship start date will pass before ISSS review?",
+      "evidence": [
+        [
+          "will pass by the time ISSS reviews your CPT application"
+        ],
+        [
+          "email from your employer indicating a new later start date"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06"
+        ],
+        [
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e"
+        ],
+        "hybrid": [
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a"
+        ],
+        "hybrid_reranked": [
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a"
+        ]
+      }
+    },
+    {
+      "id": "cpt_i20",
+      "source": "umd_cpt",
+      "question": "Can a student start work while waiting for the approved I-20 after submitting CPT?",
+      "evidence": [
+        [
+          "You do not have the authorization to begin working until you receive this I-20"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "2547977b-3b1f-5a88-9403-468355173247"
+        ],
+        "hybrid": [
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "92f9661d-53f3-5bae-a832-0e976d610b95"
+        ],
+        "hybrid_reranked": [
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2"
+        ]
+      }
+    },
+    {
+      "id": "cpt_waiver",
+      "source": "umd_cpt",
+      "question": "What does UMD require to waive a separate winter internship course for a continuing placement?",
+      "evidence": [
+        [
+          "same employer beginning in the Fall and continuing through Winter"
+        ],
+        [
+          "same number of hours per week"
+        ],
+        [
+          "specifies the full start and end dates"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c"
+        ],
+        [
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c"
+        ],
+        [
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3"
+        ],
+        "hybrid": [
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2"
+        ],
+        "hybrid_reranked": [
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8"
+        ]
+      }
+    },
+    {
+      "id": "cpt_exception",
+      "source": "umd_cpt",
+      "question": "Is an exception for full-time research CPT during the semester automatic after submitting the documents?",
+      "evidence": [
+        [
+          "will only consider an exception to permit full-time CPT authorization"
+        ],
+        [
+          "does not in any way guarantee"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4"
+        ],
+        [
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065"
+        ],
+        "hybrid": [
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae"
+        ],
+        "hybrid_reranked": [
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0"
+        ]
+      }
+    },
+    {
+      "id": "campus_forms",
+      "source": "umd_on_campus",
+      "question": "Which payroll forms does UMD list for F-1 on-campus employment, and is ISSS clearance needed?",
+      "evidence": [
+        [
+          "no clearance is needed from ISSS for on-campus employment"
+        ],
+        [
+          "I-9 form"
+        ],
+        [
+          "W-4 form"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04"
+        ],
+        [
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04"
+        ],
+        [
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "92f9661d-53f3-5bae-a832-0e976d610b95"
+        ],
+        "hybrid": [
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "718175b7-6873-5d04-9b8f-95d4866232d4"
+        ],
+        "hybrid_reranked": [
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae"
+        ]
+      }
+    },
+    {
+      "id": "campus_bookstore",
+      "source": "umd_on_campus",
+      "question": "When can work for an outside organization located on campus count as on-campus employment?",
+      "evidence": [
+        [
+          "only if they provide direct services to students"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06"
+        ],
+        "hybrid": [
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b"
+        ],
+        "hybrid_reranked": [
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "718175b7-6873-5d04-9b8f-95d4866232d4"
+        ]
+      }
+    },
+    {
+      "id": "campus_midweek",
+      "source": "umd_on_campus",
+      "question": "How is the workweek counted when classes begin in the middle of it?",
+      "evidence": [
+        [
+          "The work week for on-campus positions runs from Sunday to Saturday"
+        ],
+        [
+          "student should ensure that all work for that week is kept to 20 hours per week or less"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0"
+        ],
+        [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "f549a802-c515-521c-8120-e79fefd63913"
+        ],
+        "hybrid": [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564"
+        ],
+        "hybrid_reranked": [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "efbb91b5-8726-5240-acee-4ac3235e8dc0",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4"
+        ]
+      }
+    },
+    {
+      "id": "campus_break",
+      "source": "umd_on_campus",
+      "question": "Does the on-campus work limit change during summer and winter breaks?",
+      "evidence": [
+        [
+          "maximum of 20 hours per week during the semester and may work full time on campus during the summer and winter breaks"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04"
+        ],
+        "hybrid": [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065"
+        ],
+        "hybrid_reranked": [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "cee805b7-450d-5bb4-a3d4-361e1155e7ac",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b"
+        ]
+      }
+    },
+    {
+      "id": "campus_assistant",
+      "source": "umd_on_campus",
+      "question": "Can someone with a full graduate assistantship take another job during the academic year?",
+      "evidence": [
+        [
+          "students with full-time assistantships may not undertake additional on- or off-campus employment during the academic year"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06"
+        ],
+        "hybrid": [
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "78d39824-6622-5a22-9b8c-485d7e34e596"
+        ],
+        "hybrid_reranked": [
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8"
+        ]
+      }
+    },
+    {
+      "id": "campus_tutoring",
+      "source": "umd_on_campus",
+      "question": "Does privately tutoring on campus count if the student is not paid by UMD?",
+      "evidence": [
+        [
+          "Not all positions that take place on campus are considered on-campus work"
+        ],
+        [
+          "private tutoring (not paid directly by UMD)"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "c710c61b-b746-5461-8824-35c417d43213"
+        ],
+        [
+          "c710c61b-b746-5461-8824-35c417d43213"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "f549a802-c515-521c-8120-e79fefd63913"
+        ],
+        "hybrid": [
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb"
+        ],
+        "hybrid_reranked": [
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a"
+        ]
+      }
+    },
+    {
+      "id": "campus_offsite",
+      "source": "umd_on_campus",
+      "question": "What makes an off-campus location educationally affiliated for an on-campus job?",
+      "evidence": [
+        [
+          "affiliation is associated with the University's established curriculum"
+        ],
+        [
+          "employment must be directly related to the student's educational program"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8"
+        ],
+        [
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637"
+        ],
+        "hybrid": [
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e"
+        ],
+        "hybrid_reranked": [
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "f549a802-c515-521c-8120-e79fefd63913",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c"
+        ]
+      }
+    },
+    {
+      "id": "unpaid_volunteer",
+      "source": "umd_unpaid_work",
+      "question": "What four conditions does ISSS give for volunteering?",
+      "evidence": [
+        [
+          "No expectation of compensation"
+        ],
+        [
+          "The volunteer cannot displace a genuine position"
+        ],
+        [
+          "previously paid and/or expects to be hired and paid"
+        ],
+        [
+          "non-profit organization for public service, religious or humanitarian objective"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c"
+        ],
+        [
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c"
+        ],
+        [
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c"
+        ],
+        [
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065"
+        ],
+        "hybrid": [
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06"
+        ],
+        "hybrid_reranked": [
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c"
+        ]
+      }
+    },
+    {
+      "id": "unpaid_previous_job",
+      "source": "umd_unpaid_work",
+      "question": "Can someone volunteer by doing the same duties they were previously paid to do?",
+      "evidence": [
+        [
+          "services for which he or she was previously paid"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065"
+        ],
+        "hybrid": [
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc"
+        ],
+        "hybrid_reranked": [
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc"
+        ]
+      }
+    },
+    {
+      "id": "unpaid_difference",
+      "source": "umd_unpaid_work",
+      "question": "How does UMD distinguish volunteering from unpaid internships?",
+      "evidence": [
+        [
+          "Unpaid internships, on the other hand, do not usually qualify as \"volunteer\" activity"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "718175b7-6873-5d04-9b8f-95d4866232d4"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065"
+        ],
+        "hybrid": [
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e"
+        ],
+        "hybrid_reranked": [
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109"
+        ]
+      }
+    },
+    {
+      "id": "unpaid_authorization",
+      "source": "umd_unpaid_work",
+      "question": "When should an international student get authorization for an unpaid internship?",
+      "evidence": [
+        [
+          "receive authorization to participate in unpaid internships before starting the training",
+          "the student receives authorization for Curricular Practical Training"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "78d39824-6622-5a22-9b8c-485d7e34e596"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd"
+        ],
+        "hybrid": [
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177"
+        ],
+        "hybrid_reranked": [
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2547977b-3b1f-5a88-9403-468355173247",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177"
+        ]
+      }
+    },
+    {
+      "id": "unpaid_reimbursement",
+      "source": "umd_unpaid_work",
+      "question": "Why might a check for lunch or travel be a problem on an unpaid internship without approval?",
+      "evidence": [
+        [
+          "check for lunch and transportation expenses"
+        ],
+        [
+          "evidence of unauthorized employment"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "63f812c7-0a12-5065-aac3-3c27e47649b2"
+        ],
+        [
+          "63f812c7-0a12-5065-aac3-3c27e47649b2"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "cb760c7b-abd7-5653-bf5c-9c79b450dfbb"
+        ],
+        "hybrid": [
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8"
+        ],
+        "hybrid_reranked": [
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "c954582b-0fd0-5fc2-b3aa-f7fe271bb109",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8"
+        ]
+      }
+    },
+    {
+      "id": "unpaid_course",
+      "source": "umd_unpaid_work",
+      "question": "What class enrollment does UMD associate with documenting practical training for F-1 students?",
+      "evidence": [
+        [
+          "F-1 students must enroll in a course for which experiential learning is a requirement"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c"
+        ],
+        "hybrid": [
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc"
+        ],
+        "hybrid_reranked": [
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "ecf3e2a6-e613-5860-959a-d9bac5fffbd4",
+          "9163986b-f5e8-5bca-b5de-3ec6187afe8e",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "7ec3ca95-dcd2-5168-96d3-a98e5a69eaf8",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "c710c61b-b746-5461-8824-35c417d43213",
+          "45efdee6-17c4-55a7-86b6-79b1ca194637",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "62e77b2b-354b-5cd9-898b-1ece90e9c2cc"
+        ]
+      }
+    },
+    {
+      "id": "unpaid_supervision",
+      "source": "umd_unpaid_work",
+      "question": "What does the unpaid internship page say about replacing employees and supervising interns?",
+      "evidence": [
+        [
+          "The intern does not displace regular employees, but works under close supervision of existing staff"
+        ]
+      ],
+      "evidence_ids": [
+        [
+          "77b27dcf-0c61-589a-a87e-eee644069035"
+        ]
+      ],
+      "rankings": {
+        "dense": [
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "f96e54ff-69d2-50b0-87d0-7147fb9a2564",
+          "2547977b-3b1f-5a88-9403-468355173247"
+        ],
+        "hybrid": [
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3"
+        ],
+        "hybrid_reranked": [
+          "63f812c7-0a12-5065-aac3-3c27e47649b2",
+          "77b27dcf-0c61-589a-a87e-eee644069035",
+          "78d39824-6622-5a22-9b8c-485d7e34e596",
+          "718175b7-6873-5d04-9b8f-95d4866232d4",
+          "932f906e-3e52-5c19-85a3-e1aa62f19065",
+          "e18db5d7-4dcf-5df9-9293-7d5ecb70b75a",
+          "92f9661d-53f3-5bae-a832-0e976d610b95",
+          "f3b3f41b-f3b6-5356-bedf-4b974d12ea5c",
+          "8b1cf5ed-e8b7-559e-bdeb-54487d542d5a",
+          "432442cc-f428-517f-b9f8-ba6c2a73c95b",
+          "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "7f066de9-0a5c-55b1-adf8-4834a0e042c3",
+          "99f81d70-105b-518a-a710-f540f4422263",
+          "d151d6a7-e07f-516c-8d84-d2b872c5e177"
+        ]
+      }
+    }
+  ]
+}
