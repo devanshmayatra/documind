@@ -7,5 +7,23 @@
         "topic": "cpt",
         "source_type": "university",
         "source_updated_at": null
+    },
+    "umd_on_campus": {
+        "title": "On-Campus Employment",
+        "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/campus-employment",
+        "publisher": "University of Maryland — International Student & Scholar Services",
+        "university": "umd_college_park",
+        "topic": "on_campus_employment",
+        "source_type": "university",
+        "source_updated_at": null
+    },
+    "umd_unpaid_work": {
+        "title": "Unpaid Work",
+        "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/unpaid-work",
+        "publisher": "University of Maryland — International Student & Scholar Services",
+        "university": "umd_college_park",
+        "topic": "unpaid_work",
+        "source_type": "university",
+        "source_updated_at": null
     }
 }

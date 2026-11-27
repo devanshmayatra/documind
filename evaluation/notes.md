@@ -309,3 +309,239 @@ rate/quota-limit response but does not identify its quota category or reset
 time. No change to the model, retrieval, or generation prompt was made for
 this retry. The earlier checklist completeness omission remains a separate
 open issue. Original run reports are preserved.
+
+## Cross-passage checklist prompt revision (2026-11-26)
+
+The generator prompt now explicitly asks checklist answers to inspect all
+supplied passages for relevant footnotes and qualifications, include them
+beside the affected item or in a short note, and cite their actual supporting
+passage. It preserves all conditional branches and the document provider,
+and forbids importing unrelated restrictions merely because they were retrieved.
+Retrieval settings, JSON outcomes, and citation-ID validation are unchanged.
+
+An offline replay uses the exact four saved passages from the checklist
+case in end_to_end_20261115T142328883386Z.json. It exercises the actual
+generate_grounded_answer and build_answer_prompt functions with only the
+API client mocked. It verifies that the footnote at [S1] and checklist at
+[S3] retain their text and citation mapping in the sent prompt, alongside
+the new cross-passage instruction. All fourteen offline tests passed.
+
+The mock deliberately returns the old incomplete answer: it still receives
+citation_ids_valid, demonstrating that no semantic completeness validator
+was added. These checks verify prompt plumbing, not a model behavior fix.
+The omission remains unverified until a live answer is reviewed. When API
+quota permits, run:
+`python -m scripts.evaluate_end_to_end --case offer_letter_preserve_ambiguity`.
+Review for both date-footnote conditions with citations, preserved ambiguity,
+and no unrelated requirements. Retain prior reports for comparison.
+
+## Checklist rerun: retrieval exception (2026-11-26)
+
+Run: end_to_end_20261126T175650025037Z.json, executed by the user.
+Embedding returned HTTP 200 in the supplied console log, but the case then
+failed in retrieval with ResponseHandlingException and no numeric code.
+No passages or answer were returned, and generation was not reached.
+The log also reports that Qdrant server-version discovery failed; neither
+that warning nor the saved exception establishes the underlying cause.
+The revised prompt's effect remains unverified by a live answer.
+
+The evaluator now records error_cause_type from Python's exception chain,
+without exception messages or response bodies. An offline wrapped-timeout
+test verifies that only the class names are captured. This improves future
+diagnosis; it does not fix or identify the underlying retrieval failure.
+
+## Retrieval retry: underlying ConnectError
+
+Run: end_to_end_20261126T175854467891Z.json, executed by the user.
+The retrieval-stage ResponseHandlingException now records its underlying
+exception as ConnectError. Embedding succeeded; no passages were returned
+and generation was not reached. This narrows the failure to a connection
+problem rather than an observed answer or citation failure. It does not
+identify DNS, endpoint, network, TLS, or cluster availability as the cause.
+Stop repeating embedding/generation evaluations until Qdrant connectivity
+is restored. Check cluster status and endpoint configuration first. No
+production configuration, compatibility checks, or data were changed.
+
+## Revised checklist prompt: completed live review
+
+Run: end_to_end_20261126T180118110525Z.json, executed by the user.
+One reference outcome matched, with zero execution errors. Retrieval and
+generation succeeded; this does not establish the cause or resolution of
+the preceding connection failures.
+
+The retrieved point IDs, order, and passage text match the checklist case
+from end_to_end_20261115T142328883386Z.json. Coding-assistant review finds
+that the revised answer now includes both previously omitted qualifications:
+dates within the semester of the CPT-associated course, and employer email
+with a new later start date when the original date has passed OR will pass
+by ISSS review. Both cite the actual footnote passage [S1]. The checklist
+items cite [S3], the research-phase condition is retained, and the ambiguous
+phrase remains quoted and explicitly unresolved. Remote-documentation
+conditions are also supported by [S1].
+
+However, the answer adds a winter-course exception summary from [S4]. It
+mentions Fall/Winter or Winter/Spring continuity and the same weekly hours,
+but does not explicitly preserve the same-employer condition or continuation
+through the duration of Spring for the Winter/Spring branch. This extra
+conditional summary is incomplete; do not label the entire answer a clean
+grounding/completeness pass. The original date-footnote omission was absent
+in this single observed run, while over-expansion introduced another review
+concern. No automatic claim-support check exists.
+
+This is development evidence, not benchmark accuracy or proof of a general
+prompt improvement. The prompt and retrieval remain unchanged after review;
+the original report is preserved, with review recorded here.
+
+## Checklist scope and exception completeness revision (2026-11-26)
+
+The prompt now distinguishes direct document footnotes/conditions from
+separate course-registration exceptions or special eligibility scenarios.
+General checklist answers should retain the former without adding the
+latter unless the question asks about or explicitly establishes the scenario.
+When an exception is relevant, every stated prerequisite must stay together;
+partial prerequisites must not be presented as sufficient, and missing scope
+must not be inferred. Retrieval and citation-ID validation are unchanged.
+
+The checklist development case now includes review criteria for avoiding
+unrequested winter-course expansion and preserving same-employer, weekly-hour,
+and full-duration conditions if the exception is discussed nevertheless.
+Offline prompt-delivery checks replay both the original omitted-footnote
+report and the later incomplete-winter-exception report. All sixteen offline
+tests passed. Mocked recorded answers still pass ID validation: these checks
+do not demonstrate semantic correction. No new live model result is claimed.
+
+Next check: `python -m scripts.evaluate_end_to_end --case offer_letter_preserve_ambiguity`.
+Review the answer for retained direct footnote conditions, unresolved ambiguous
+wording, and absence of the unrequested winter-course exception. Preserve all
+prior runs; this remains iterative tuning on inspected development evidence.
+
+## Checklist scope revision: generation service error
+
+Run: end_to_end_20261126T180654698914Z.json, executed by the user.
+The supplied console shows successful embedding and Qdrant query requests,
+then HTTP 503 from generation. No answer was produced, so this run cannot
+evaluate the revised checklist scope or exception-completeness behavior.
+Record this as an execution failure, not a completed wrong outcome. The
+previous answer's winter-exception concern remains unverified after revision.
+No prompt or retrieval change is justified by this service response alone.
+Keep the report and retry the same targeted case later rather than changing
+the model or repeatedly tuning the prompt around an API execution failure.
+
+Run: end_to_end_20261126T180918121242Z.json, subsequent user retry.
+Again, four passages were retrieved, then generation failed with ServerError
+503 and produced no answer. This is the second consecutive 503 for the
+scope revision, not another observation of answer quality. Pause live reruns
+for now; retain the current prompt and mark its model behavior unverified.
+No model, retrieval, or prompt changes were made in response to these errors.
+
+## Account-free shared answer cache (2026-11-26)
+
+Added core/answer_cache.py (SQLite) and core/answer_service.py. The app has
+no account gate and now checks the shared cache before rewriting/retrieval/
+generation for eligible general first-turn questions. Matching lowercases
+and normalizes whitespace only; it is not semantic similarity matching.
+Answers, the question, and ordered source cards persist in data/cache/, which
+is excluded from Git. TTL is 24 hours. The UI offers a shared-cache opt-out.
+No visitor question list or persistent cross-refresh conversation was added.
+
+Only citation_ids_valid answers with no citation errors and passages matching
+current registered snapshot URLs, hashes, and retrieval timestamps are saved.
+Retriever now forwards source_id and source_content_sha256 for this check.
+Follow-ups, obvious personal/identifier questions, abstentions, API failures,
+and unregistered uploads bypass storage. The personal-information heuristic
+is not complete and is described as such in README. Valid IDs still do not
+prove support; caching does not repair the known grounding limitations.
+
+Indexing through upload_chunks invalidates and suspends cache reuse around
+uploads, including partial failures. Fingerprints cover pipeline code,
+registry/snapshot metadata, and the configured Qdrant endpoint. External
+Qdrant edits bypass this invalidation and require manual cache clearing.
+An interrupted indexing process leaves reuse disabled for operator review.
+SQLite storage errors in the question path fall back to the existing RAG
+pipeline. Public ingestion is disabled by default; the explicit environment
+setting is for a trusted operator instance, not a public authentication scheme.
+
+Verification: all 31 offline tests passed. Real SQLite checks cover persistence
+across instances, normalization, TTL, pipeline and corpus invalidation, and
+in-flight writes after failed updates. Actual answer-service checks verify a
+second visitor bypasses all three pipeline calls while retaining citations
+and source dates; opt-out, history, invalid IDs, source mismatches, API errors,
+and unavailable storage are also checked. Application modules parse.
+No live Gemini/Qdrant or Streamlit browser test was performed, no deployment
+was made, and no latency/cost/accuracy improvement was measured. Hosting must
+preserve the local cache disk; independent replicas do not share this SQLite
+file. Existing retrieval algorithms, final_k=4, and generator prompt remain.
+
+## F-1 Compass UI redesign (2026-11-26)
+
+User approved a light reference-desk direction: off-white, charcoal, muted
+red. Updated app.py, a dedicated stylesheet and compass SVG, and Streamlit's
+light theme. Replaced legacy DocuMind presentation, model badges, decorative
+emoji, and the unconditional Active indicator with UMD CPT scope, starter
+questions, calmer chat controls, and readable numbered source cards. An
+unavailable collection count now displays as unavailable rather than zero.
+Source dates and Unknown values are unchanged in meaning; public ingestion
+and shared-answer opt-out remain available under the existing rules.
+
+All 31 offline regression tests passed. Real Streamlit AppTest checks also
+passed for the empty state, public upload visibility, every starter's question
+mapping, opt-out persistence, recorded chat/source rendering, and conversation
+reset. Browser inspection covered the desktop workspace and a 390px mobile
+layout: document width stayed at 390px and source dates remained separate.
+UI preview used recorded development data and mocked services, not live
+Gemini/Qdrant. The temporary preview server was stopped after verification.
+No retrieval, ranking, generation, caching, or account-access behavior changed.
+This is interface verification, not evidence of answer-quality improvement.
+
+## Expanded UMD employment corpus (2026-11-26)
+
+Indexed the UMD ISSS On-Campus Employment snapshot 20261126T194807975501Z
+(4 chunks) and Unpaid Work snapshot 20261126T194808091994Z (6 chunks)
+alongside the original CPT snapshot. Source update dates are unknown.
+Production still uses hybrid retrieval, FlashRank and four final passages.
+Evaluation suites ran sequentially with 30 seconds between cases.
+
+- Development retrieval (`ranking_comparison_20261126T195203619505Z.json`).
+  Hit@1 and Hit@5 were 2/6 and 4/6 for dense, 1/6 and 4/6 for sparse,
+  1/6 and 5/6 for hybrid, and 4/6 and 5/6 after FlashRank. The remote-work
+  supporting point moved from rank 11 in the prior reranked run to rank 13.
+- Previously inspected held-out retrieval (`held_out_20261126T195353351141Z.json`).
+  Dense, sparse and hybrid each covered all labeled groups for 4/4 questions
+  at both cutoffs (4 and 5). FlashRank and RRF60 each covered 3/4 at both
+  cutoffs. The research-exception question lost one of two groups.
+- Live end-to-end (`end_to_end_20261126T195812032729Z.json`).
+  All six cases retrieved four passages. On the two new development questions,
+  inspection confirmed that rank 2 contained the partial-week rule and the
+  full volunteer criteria respectively. All six generation requests returned
+  HTTP 503. There were zero completed answers for status or claim review.
+- Supplied-evidence generation (`generation_20261126T200505622584Z.json`).
+  All eight cases returned Gemini HTTP 503. Across both generation suites,
+  none of the 14 failed cases returned HTTP 429 or a scorable answer.
+
+## Deployment evaluation (2026-11-26)
+
+The paced live run `end_to_end_20261126T233822771665Z.json` matched
+five reference statuses across six development cases, with one Gemini
+HTTP 503 in the CPT date-footnote case and zero completed status mismatches.
+The saved report retains the four retrieved passages per case.
+The isolated retry `end_to_end_20261126T233902325791Z.json` retrieved
+evidence, then hit Gemini HTTP 429. The date-footnote case remains
+unscored in this evaluation.
+
+Manual review of the completed outputs:
+
+- The CPT offer-letter checklist included the separate date footnote,
+  preserved the ambiguous checklist phrase, and kept the winter exception out.
+- The term-interpretation case abstained, consistent with the ambiguous excerpt.
+- The explicit-dates case cited the dates requirement and both footnote conditions.
+- The on-campus case cited the Sunday-to-Saturday week and midweek 20-hour cap.
+- The volunteering case cited all four criteria and stayed focused on
+  volunteering. Its opening bullet presents the source's narrower summary
+  (charitable or humanitarian organizations) as an additional criterion.
+  The same answer also lists the broader nonprofit purposes from the formal
+  criteria. Treat this as a wording limitation despite the expected status.
+
+The Docker image built and returned HTTP 200 from Streamlit's health endpoint.
+A separate in-container AppTest loaded the public UI with three saved source
+snapshots and uploads disabled. All 32 offline tests and the offline Streamlit
+checks passed. Deployment to a public host was outside this run.

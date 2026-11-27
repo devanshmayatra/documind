@@ -1,0 +1,23 @@
+[
+  {
+    "id": "on_campus_partial_week",
+    "question": "How does UMD count the on-campus workweek for F-1 students if the semester begins midweek?",
+    "expected_status": "citation_ids_valid",
+    "expected_source_id": "umd_on_campus",
+    "source_snapshot": "20261126T194807975501Z",
+    "manual_review_criteria": [
+      "Cites the Sunday-to-Saturday workweek and the limit of 20 hours or less for the entire week in which the semester begins."
+    ]
+  },
+  {
+    "id": "unpaid_volunteer_criteria",
+    "question": "What criteria does UMD list for work to count as volunteering?",
+    "expected_status": "citation_ids_valid",
+    "expected_source_id": "umd_unpaid_work",
+    "source_snapshot": "20261126T194808091994Z",
+    "manual_review_criteria": [
+      "Cites all four volunteer criteria, including prior or expected future paid duties and the nonprofit public service, religious, or humanitarian objective.",
+      "Keeps volunteer criteria distinct from unpaid internship requirements."
+    ]
+  }
+]

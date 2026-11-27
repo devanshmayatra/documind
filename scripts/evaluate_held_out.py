@@ -1,6 +1,7 @@
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from scripts.eval_pacing import paced_cases
 
 from core.retriever import retrieve_candidates, rerank_candidates
 
@@ -61,7 +62,7 @@ def main():
     results = []
     totals = {}
 
-    for case in cases:
+    for case in paced_cases(cases):
         print(f"\n{case['id']}", flush=True)
 
         passages = {

@@ -84,6 +84,8 @@ def retrieve_candidates(
             "source_title": point.payload.get("source_title"),
             "retrieved_at": point.payload.get("retrieved_at"),
             "source_updated_at": point.payload.get("source_updated_at"),
+            "source_id": point.payload.get("source_id"),
+            "source_content_sha256": point.payload.get("source_content_sha256"),
         }
         for point in search_results
     ]

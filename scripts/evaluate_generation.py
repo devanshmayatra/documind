@@ -3,6 +3,7 @@ import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from scripts.eval_pacing import paced_cases
 from time import perf_counter
 
 from core.generator import GENERATION_MODEL, generate_grounded_answer
@@ -86,6 +87,8 @@ def build_cases():
                 "Preserves the date footnote: dates within the semester of the CPT-associated course; employer email with a new later start date if the original date has passed or will pass by ISSS review.",
                 "Quotes 'The specific term internship or co-op' and flags its meaning as unclear.",
                 "Does not assert an academic-semester requirement or a literal-wording requirement from that phrase.",
+                "Keeps the general document checklist focused; does not introduce a separate winter-course registration exception unless the question establishes that scenario.",
+                "If a winter exception is nevertheless discussed, does not present a partial prerequisite list as sufficient: preserves the same employer, unchanged weekly hours, and Fall-through-Winter or Winter-through-the-duration-of-Spring continuity, as supported by retrieved evidence.",
             ],
         },
         {
@@ -152,7 +155,7 @@ def main():
 
     results = []
 
-    for case in cases:
+    for case in paced_cases(cases):
         print(f"Running: {case['id']}", flush=True)
         started = perf_counter()
 

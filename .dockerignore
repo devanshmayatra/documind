@@ -1,0 +1,7 @@
+.git
+**/.env*
+**/*.env
+.streamlit/secrets.toml
+data/cache
+**/__pycache__
+evaluation/runs

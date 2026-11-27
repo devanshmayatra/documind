@@ -1,0 +1,106 @@
+{
+  "run_id": "20261126T180918121242Z",
+  "scope": "Offer-letter development cases; live retrieval and generation, empty chat history; no Streamlit UI",
+  "pipeline": "hybrid_rrf_flashrank",
+  "initial_k": 15,
+  "final_k": 4,
+  "collection": "resume_rag_kb",
+  "model": "models/gemini-3.6-flash",
+  "implementation_sha256": {
+    "core/retriever.py": "48f45bd384bdd9096a0bdade1376b900e981f3222ba677d995e5407dd79216d7",
+    "core/generator.py": "94fb520ab60ba67b35b200749aed45f0619be7ef48d08541245abbc08d0651e9",
+    "core/qdrant_engine.py": "9cb2537c357a735b8a33c0ed77c5e8136da9de62db244b9e68528019ba04ee7c",
+    "scripts/evaluate_generation.py": "6e446f7286d44ebe2d388a38e99c24fed1f311b40a7ff6f382d84e0ac4cb668c",
+    "scripts/evaluate_end_to_end.py": "9f4f040d2829d7d3bcf6c6f7e2b204fd2cbf0dabc7dfd187928ef557163ca203"
+  },
+  "review_note": "Expected statuses come from supplied-evidence development cases. Review actual retrieved evidence before treating a mismatch as a generation error. A matching status or valid citation IDs do not establish factual support. Reference snapshot is a label, not verification of the live corpus version.",
+  "latency_scope": "Rewrite, embedding, retrieval, reranking, generation and validation; excludes module initialization",
+  "case_count": 1,
+  "reference_outcome_matches": 0,
+  "execution_errors": 1,
+  "completed_reference_outcome_mismatches": 0,
+  "results": [
+    {
+      "case_id": "offer_letter_preserve_ambiguity",
+      "question": "What must the UMD CPT employer offer letter include?",
+      "reference_expected_status": "citation_ids_valid",
+      "reference_source_snapshot": "20261114T213307398026Z",
+      "manual_review_criteria": [
+        "Includes the supported checklist items and their conditions.",
+        "Preserves the date footnote: dates within the semester of the CPT-associated course; employer email with a new later start date if the original date has passed or will pass by ISSS review.",
+        "Quotes 'The specific term internship or co-op' and flags its meaning as unclear.",
+        "Does not assert an academic-semester requirement or a literal-wording requirement from that phrase.",
+        "Keeps the general document checklist focused; does not introduce a separate winter-course registration exception unless the question establishes that scenario.",
+        "If a winter exception is nevertheless discussed, does not present a partial prerequisite list as sufficient: preserves the same employer, unchanged weekly hours, and Fall-through-Winter or Winter-through-the-duration-of-Spring continuity, as supported by retrieved evidence."
+      ],
+      "manual_review_status": "pending",
+      "passages": [
+        {
+          "text": "*Internship dates must be within the semester you are registered for the course associated with your CPT (see Step 2).You can find semester dates for each academic year here. If your internship start date has passed or will pass by the time ISSS reviews your CPT application, please include an email from your employer indicating a new later start date.\nClick here to see an example of an internship/co-op offer letter.\nStudents are urged to review the CPT checklist to confirm all required documents are uploaded and all necessary details are included in the offer letter. Any student working remotely on CPT must have this confirmed in the offer letter or in supporting documentation, the address where you will work remotely must also be mentioned by the employer.\nStep 2. Register for an academic component (course)\nRegister for an academic component (course) that is required for the completion of your degree.",
+          "source": "umd_cpt.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "Curricular Practical Training (CPT)",
+          "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+          "source_updated_at": null,
+          "rank": 1,
+          "citation_id": "[S1]",
+          "point_id": "4a95b113-edd3-53bd-a38d-ceb9cea70b06",
+          "rerank_score": 0.9945167899131775
+        },
+        {
+          "text": "The support letter from the advisor must be on UMD letterhead and include an authorized signature.\nElective Internship courses such as UNIV099/ENCO099/BMGT can no longer be used for CPT course registration. Students must use courses within their department that are required for the completion of the degree.\nIf you are pursuing CPT in an optional term (Summer, Winter), please register for a full course of study in the required term immediately following your internship (Fall, Spring) before submitting your CPT authorization. If you do not require a full course of study to complete the program in that next required term, please register for all required courses and submit a request for part-time authorization on iTerp.\nStep 3. Submit a request in iTerp to obtain CPT authorization",
+          "source": "umd_cpt.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "Curricular Practical Training (CPT)",
+          "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+          "source_updated_at": null,
+          "rank": 2,
+          "citation_id": "[S2]",
+          "point_id": "2a2a63dd-dda6-50fa-aa22-9b1d0df070ae",
+          "rerank_score": 0.9894631505012512
+        },
+        {
+          "text": "Table 1, row 4\nTERM: Summer 2027\nEarliest start date: May 21, 2027\nLatest end date: Aug 29, 2027\nFinal date to request and begin CPT authorization: July 31, 2027\nApplication Procedure\nStep 1. Obtain an internship/co-op offer letter\nObtain an internship/co-op offer letter from an employer which includes all of the following information:\nOfficial company letterhead\nAn authorized signature\nSpecific start and end dates of the internship/co-op*\nNumber of hours per week\nAddress of the workplace (if your employer address is different from the work site, please provide both addresses. No PO Box addresses)\nAmount of compensation\nJob description (specific job responsibilities)\nThe name of your supervisor during the internship/co-op\nThe specific term internship or co-op\nIf you are a Masters thesis/Ph.D. student in your research phase: a statement that the employer understands that this work will be incorporated as  part of your thesis/dissertation research.",
+          "source": "umd_cpt.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "Curricular Practical Training (CPT)",
+          "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+          "source_updated_at": null,
+          "rank": 3,
+          "citation_id": "[S3]",
+          "point_id": "2547977b-3b1f-5a88-9403-468355173247",
+          "rerank_score": 0.8411346673965454
+        },
+        {
+          "text": "Student will be engaging in training/research for the same employer beginning in the Fall and continuing through Winter, or beginning in Winter and continuing through the duration of the Spring;\nStudent will be keeping the same number of hours per week for the duration of the internship; and\nAt the time of the CPT authorization application, student’s offer letter specifies the full start and end dates for the duration of the internship, including the employment that will occur during winter term.\nStudents that do not meet all three of these criteria should plan on registering for a winter term internship course in order to be authorized for CPT during the winter.\nEnding On-Campus Employment to Participate in CPT",
+          "source": "umd_cpt.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "Curricular Practical Training (CPT)",
+          "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+          "source_updated_at": null,
+          "rank": 4,
+          "citation_id": "[S4]",
+          "point_id": "790544ab-ced1-51b9-86a5-cf0b48a1487c",
+          "rerank_score": 0.2943318486213684
+        }
+      ],
+      "rewritten_query": "What must the UMD CPT employer offer letter include?",
+      "retrieval_and_rewrite_seconds": 1.0284445190045517,
+      "execution_status": "error",
+      "error_stage": "generation",
+      "error_type": "ServerError",
+      "error_cause_type": null,
+      "error_code": 503,
+      "reference_outcome_match": null,
+      "latency_seconds": 6.593969993002247
+    }
+  ]
+}

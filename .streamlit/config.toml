@@ -4,3 +4,11 @@ runOnSave = true
 headless = true
 address = "0.0.0.0"
 port = 8501
+
+[theme]
+base = "light"
+primaryColor = "#9b352e"
+backgroundColor = "#faf9f6"
+secondaryBackgroundColor = "#f1f0eb"
+textColor = "#272822"
+font = "sans serif"

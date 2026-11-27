@@ -1,152 +1,115 @@
-# ⚡ DocuMind AI: Enterprise Multi-Document RAG
+# F-1 Compass
 
-> **Live Demo:** Explore the deployed application at [https://documind-v1.streamlit.app/](https://documind-v1.streamlit.app/)
+F-1 Compass is an account-free Streamlit reference desk for University of Maryland, College Park students exploring CPT, on-campus employment, and unpaid work. Answers include excerpts and links from indexed UMD ISSS pages.
 
-DocuMind AI is an enterprise-ready Retrieval-Augmented Generation (RAG) assistant designed for document intelligence and contextual question answering across multi-format file collections. It features a dual-vector hybrid search engine hosted on Qdrant Cloud, local FlashRank cross-encoder reranking, and real-time streaming powered by Google Gemini 3.6 Flash.
+The app uses Gemini embeddings and BM42 in Qdrant, reranks hybrid candidates with FlashRank, and sends the top four passages to Gemini. Follow-up questions use conversation-aware query rewriting.
 
----
+## Run locally
 
-## 📸 Key Features
+Use Python 3.11. Install dependencies, configure a local environment, then start Streamlit.
 
-* **Multi-Format Ingestion:** Seamlessly parses PDF, DOCX, TXT, and Markdown files with preserved document metadata (filename, page numbers).
-* **Dual-Vector Hybrid Search:** Combines semantic dense vectors (`gemini-embedding-001`) with lexical sparse vectors (BM42 via `FastEmbed`) within a unified Qdrant Cloud collection.
-* **Cross-Encoder Reranking:** Employs `FlashRank` to rerank top retrieved candidate chunks before context injection, filtering out noise and maximizing retrieval precision.
-* **Contextual Query Reformulation:** Resolves conversational pronouns and multi-turn context dependencies into standalone search queries.
-* **Real-Time Token Streaming:** Streams response tokens directly from Gemini Flash for low-latency feedback.
-* **Verifiable Citations:** Displays interactive citation cards complete with source document names, page numbers, text snippets, and rerank confidence scores.
-* **Production-Grade UI:** Engineered in Streamlit with fixed-dimension sidebars, live Qdrant Cloud cluster telemetry, and dark-mode styling.
-
----
-
-## 🏗️ Architecture Pipeline
-
-```text
-[User Document Upload] (PDF, DOCX, TXT, MD)
-         │
-         ▼
-[Text Chunking & Metadata Extraction]
-         │
-         ├───► Dense Embeddings (Gemini-Embedding-001)
-         └───► Sparse Embeddings (FastEmbed BM42)
-                   │
-                   ▼
-     [Qdrant Cloud Managed Cluster]
-                   ▲
-                   │ Hybrid Search (Dense + Sparse Fusion)
-                   │
-[User Prompt] ──► [Query Rewriter] ──► [FlashRank Cross-Encoder]
-                                              │
-                                              ▼
-                                   [Top Reranked Passages]
-                                              │
-                                              ▼
-                              [Gemini 3.6 Flash Streaming Engine]
-                                              │
-                                              ▼
-                                 [Grounded Answer + Citations]
-
+```sh
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
 ```
 
----
+Set `GEMINI_API_KEY`, `QDRANT_URL`, and `QDRANT_API_KEY` (for authenticated Qdrant) in the runtime environment or an untracked local `.env`. Point the app at a Qdrant instance with the project corpus indexed. To populate a new instance, run `python -m scripts.index_source SOURCE_ID` for each entry in `sources.json` using the saved snapshots.
 
-## 🛠️ Tech Stack
+## Deploy
 
-* **Frontend Framework:** Streamlit
-* **Vector Database:** Qdrant Cloud (Managed Vector DB)
-* **Language Model:** Google Gemini 3.6 Flash via `google-genai` SDK
-* **Dense Embeddings:** Gemini Embedding (`models/gemini-embedding-001`)
-* **Sparse Embeddings:** FastEmbed (`Qdrant/bm42-all-minilm-l6-v2-attentions`)
-* **Reranker:** FlashRank Cross-Encoder (`ms-marco-TinyBERT-L-2-v2`)
-* **Document Processing:** PyPDF, python-docx, LangChain Text Splitters
+Use a single container with a persistent volume for `/app/data/cache` so the public question list and reusable answers survive restarts. Provide credentials through the host's runtime secret settings. The app needs outbound access to Gemini, Qdrant, and model download hosts on first startup.
 
----
-
-## 📂 Project Structure
-
-```text
-documind/
-├── app.py                   # Streamlit interface, session state & streaming logic
-├── core/
-│   ├── __init__.py
-│   ├── ingestion.py         # Multi-format document parsers & text splitters
-│   ├── qdrant_engine.py     # Qdrant Cloud client, schema setup & batched indexing
-│   ├── retriever.py         # Hybrid retrieval & FlashRank reranker
-│   └── generator.py         # Query rewriting & Gemini client integration
-├── requirements.txt         # Pinned project dependencies
-├── .env.example             # Environment variable template
-├── .streamlit/
-│   └── config.toml          # Server polling & layout configuration
-└── README.md
-
+```sh
+docker build -t f1-compass .
+docker run --rm -p 8501:8501 --env-file .env -v f1-compass-cache:/app/data/cache f1-compass
 ```
 
----
+Keep `F1_COMPASS_ENABLE_INGESTION` unset on the public instance. Before sharing the URL, try one question with each of the three UMD sources. Open the citation cards and check that a question explicitly shared from a fresh conversation appears in the sidebar. Restart the container and verify the shared question still appears.
 
-## 🚀 Getting Started
+## Shared answers without accounts
 
-### Prerequisites
+The application does not require a visitor account. General first-turn
+questions can reuse an answer saved by an earlier visitor. This is an exact
+match after lowercasing and whitespace normalization; punctuation, numbers,
+negation, and location words remain significant. Paraphrases do not match yet.
+Follow-ups still use conversation-aware query rewriting and the existing
+hybrid retrieval, FlashRank, and Gemini generation pipeline.
 
-* Python 3.10+
-* Conda or `venv`
-* [Google AI Studio API Key](https://aistudio.google.com/app/apikey)
-* [Qdrant Cloud Cluster](https://cloud.qdrant.io/) (Cluster URL & API Key)
+The SQLite cache lives at `data/cache/answers.sqlite3` and is excluded from
+Git. It stores eligible questions, successful answers, and their ordered
+source cards for up to 24 hours. The sidebar lists up to 50 recently shared
+questions from a separate table in the same database. Visitors can opt in
+when asking a general first-turn question. The public list retains only the
+question text and recency, independently of answer expiry and reindexing.
+Older cached questions stay private. Expired answers are deleted during cache
+reads/writes. Only results with valid citation IDs and passages matching
+current locally registered source snapshots are cached. Citation-ID validity
+does not prove factual support; cached answers inherit generation limitations.
 
-### 1. Clone & Environment Setup
+Questions that appear personal, contain obvious identifiers, or have chat
+history are skipped. This filter is conservative, not a reliable detector of
+all personal information. Visitors can uncheck **Reuse and save answers for
+general questions** to bypass both lookup and storage. Abstentions, invalid
+citations, API errors, and passages from unregistered uploads are not cached.
+Storage errors fall back to the original answer pipeline.
 
-```bash
-git clone git@github.com:devanshmayatra/documind.git
-cd documind
+Cache entries are invalidated by indexing through `upload_chunks`, snapshot
+metadata changes, endpoint changes, and changes to the cache/retrieval/
+generation code. Direct Qdrant edits outside this application are not tracked:
+clear the local cache while the app is stopped after external corpus changes.
+If indexing crashes mid-update, reuse stays disabled until an operator checks
+the corpus and repairs the cache state while the app is stopped. Removing
+the entire database would also remove the public question list. The
+source-version labels do not implement retirement of old Qdrant points.
 
-conda create -n doc-rag python=3.11 -y
-conda activate doc-rag
-pip install -r requirements.txt
+Uploads are hidden by default. Set `F1_COMPASS_ENABLE_INGESTION=true` only in
+a trusted local/operator instance, or use `python -m scripts.index_source`.
+This setting is not authentication; do not enable it on an anonymous public
+instance. This change does not deploy the app or configure hosting access.
 
+SQLite is shared by visitors to a single server with the same disk, not by
+independent replicas. Hosting must preserve `data/cache/` across restarts for
+durable reuse. Keep the database private; never serve it as a download.
+
+Offline checks: `python -B -m unittest discover -s tests -v`.
+
+### Live evaluation
+
+Run these suites sequentially from the project root. They use the configured
+Gemini account and pause 30 seconds between cases. Set
+`F1_EVAL_PAUSE_SECONDS` to a longer interval for a lower quota.
+
+```sh
+python -m scripts.compare_rankings
+python -m scripts.evaluate_held_out
+python -m scripts.evaluate_generation
+python -m scripts.evaluate_end_to_end
 ```
 
-### 2. Environment Variables
+The first two use the original CPT point labels, including the previously
+inspected held-out cases. Generation uses supplied evidence. End-to-end
+cases retrieve live evidence, including one question for each additional
+UMD source. Each script saves a separate report under `evaluation/runs/`.
 
-Create a `.env` file in the root directory:
+## F-1 Compass interface
 
-```bash
-cat << 'EOF' > .env
-GEMINI_API_KEY=your_actual_gemini_api_key_here
-QDRANT_URL=https://your-cluster-url.qdrant.io:6333
-QDRANT_API_KEY=your_qdrant_api_key_here
-EOF
+The registry includes UMD ISSS pages for CPT, on-campus employment and unpaid work.
+The Streamlit interface uses a light reference-desk palette, CPT starter
+questions, and numbered source cards. Retrieval and source-update dates
+remain separate; missing dates remain Unknown. Public uploads stay hidden
+unless the existing trusted-operator setting is enabled.
 
-```
+Run `python -B tests/check_ui.py` in the project environment for the real
+Streamlit UI smoke check with mocked services. To preview the design without
+live API calls, run `streamlit run tests/ui_preview.py --server.port 8502`.
+The preview uses one recorded development answer and is not a deployment
+entry point. The normal entry point remains `streamlit run app.py`.
 
-### 3. Run Locally
+### Retrieval results
 
-Run the application with polling enabled for live updates:
-
-```bash
-streamlit run app.py --server.fileWatcherType poll --server.runOnSave true
-
-```
-
-Access the app in your browser at `http://localhost:8501`.
-
----
-
-## 🌐 Cloud Deployment (Streamlit Community Cloud)
-
-1. Push your repository to GitHub (`devanshmayatra/documind`).
-2. Go to [share.streamlit.io](https://share.streamlit.io) and create a **New app**.
-3. Select `devanshmayatra/documind`, branch `main`, and set **Main file path** to `app.py`.
-4. Under **Advanced Settings > Secrets**, add your Qdrant Cloud and Gemini credentials in TOML format:
-
-```toml
-GEMINI_API_KEY = "AIzaSy..."
-QDRANT_URL = "https://your-cluster-url.aws.cloud.qdrant.io:6333"
-QDRANT_API_KEY = "your-qdrant-cloud-api-key"
-
-```
-
-5. Click **Deploy**. Access the production application at [https://documind-v1.streamlit.app/](https://documind-v1.streamlit.app/).
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
+With hybrid retrieval and FlashRank, a labeled supporting passage ranked
+first for 4 of 6 CPT development questions and appeared in the top five
+for 5 of 6. At the production cutoff of four passages, all labeled evidence
+groups were retrieved for 3 of 4 previously inspected CPT questions.
+These counts describe the labeled cases and their indexed corpus.
+See [evaluation notes](evaluation/notes.md) for run IDs and limitations.

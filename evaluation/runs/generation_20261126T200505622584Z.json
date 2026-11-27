@@ -1,0 +1,187 @@
+{
+  "run_id": "20261126T200505622584Z",
+  "model": "models/gemini-3.6-flash",
+  "generator_sha256": "94fb520ab60ba67b35b200749aed45f0619be7ef48d08541245abbc08d0651e9",
+  "evaluator_sha256": "3db6006a569e8ae8eb238afc604ce19d3ecc4485be46e827e5e66ecd548e13f0",
+  "scope": "8 development examples with supplied evidence; no retrieval",
+  "manual_review_note": "Outcome matching checks status only. Review answers against supplied evidence and case criteria; citation IDs do not establish claim support.",
+  "latency_scope": "Generation and response validation; excludes module initialization",
+  "historical_note": "The ambiguous question initially produced an answer by inferring the pronoun referent from the excerpt. A prompt revision requested clarification instead; the subsequent manual check passed.",
+  "outcome_matches": 0,
+  "execution_errors": 8,
+  "completed_outcome_mismatches": 0,
+  "case_count": 8,
+  "results": [
+    {
+      "id": "remote_sufficient",
+      "question": "What address documentation does UMD require for remote work on CPT?",
+      "passages": [
+        {
+          "source_title": "Curricular Practical Training (CPT)",
+          "publisher": "University of Maryland — ISSS",
+          "page": null,
+          "text": "Any student working remotely on CPT must have this confirmed in the offer letter or in supporting documentation, the address where you will work remotely must also be mentioned by the employer."
+        }
+      ],
+      "expected_status": "citation_ids_valid",
+      "execution_status": "error",
+      "error_type": "ServerError",
+      "error_code": 503,
+      "outcome_match": false,
+      "latency_seconds": 1.2978862919844687
+    },
+    {
+      "id": "remote_insufficient",
+      "question": "What address documentation does UMD require for remote work on CPT?",
+      "passages": [
+        {
+          "source_title": "Curricular Practical Training (CPT)",
+          "publisher": "University of Maryland — ISSS",
+          "page": null,
+          "text": "Please note that your attendance at this workshop is not required in order to apply for CPT."
+        }
+      ],
+      "expected_status": "insufficient_evidence",
+      "execution_status": "error",
+      "error_type": "ServerError",
+      "error_code": 503,
+      "outcome_match": false,
+      "latency_seconds": 1.4231220519868657
+    },
+    {
+      "id": "ambiguous_question",
+      "question": "Do I need it?",
+      "passages": [
+        {
+          "source_title": "Curricular Practical Training (CPT)",
+          "publisher": "University of Maryland — ISSS",
+          "page": null,
+          "text": "Please note that your attendance at this workshop is not required in order to apply for CPT."
+        }
+      ],
+      "expected_status": "needs_clarification",
+      "execution_status": "error",
+      "error_type": "ServerError",
+      "error_code": 503,
+      "outcome_match": false,
+      "latency_seconds": 0.45836141100153327
+    },
+    {
+      "id": "explicit_question",
+      "question": "Is workshop attendance required to apply for CPT?",
+      "passages": [
+        {
+          "source_title": "Curricular Practical Training (CPT)",
+          "publisher": "University of Maryland — ISSS",
+          "page": null,
+          "text": "Please note that your attendance at this workshop is not required in order to apply for CPT."
+        }
+      ],
+      "expected_status": "citation_ids_valid",
+      "execution_status": "error",
+      "error_type": "ServerError",
+      "error_code": 503,
+      "outcome_match": false,
+      "latency_seconds": 0.3239388109941501
+    },
+    {
+      "id": "offer_letter_preserve_ambiguity",
+      "question": "What must the UMD CPT employer offer letter include?",
+      "passages": [
+        {
+          "source_title": "Curricular Practical Training (CPT)",
+          "publisher": "University of Maryland — ISSS",
+          "page": null,
+          "text": "Obtain an internship/co-op offer letter from an employer which includes all of the following information:\nOfficial company letterhead\nAn authorized signature\nSpecific start and end dates of the internship/co-op*\nNumber of hours per week\nAddress of the workplace (if your employer address is different from the work site, please provide both addresses. No PO Box addresses)\nAmount of compensation\nJob description (specific job responsibilities)\nThe name of your supervisor during the internship/co-op\nThe specific term internship or co-op\nIf you are a Masters thesis/Ph.D. student in your research phase: a statement that the employer understands that this work will be incorporated as  part of your thesis/dissertation research.\n*Internship dates must be within the semester you are registered for the course associated with your CPT (see Step 2).You can find semester dates for each academic year here. If your internship start date has passed or will pass by the time ISSS reviews your CPT application, please include an email from your employer indicating a new later start date.",
+          "source_snapshot": "20261114T213307398026Z"
+        }
+      ],
+      "expected_status": "citation_ids_valid",
+      "manual_review_criteria": [
+        "Includes the supported checklist items and their conditions.",
+        "Preserves the date footnote: dates within the semester of the CPT-associated course; employer email with a new later start date if the original date has passed or will pass by ISSS review.",
+        "Quotes 'The specific term internship or co-op' and flags its meaning as unclear.",
+        "Does not assert an academic-semester requirement or a literal-wording requirement from that phrase.",
+        "Keeps the general document checklist focused; does not introduce a separate winter-course registration exception unless the question establishes that scenario.",
+        "If a winter exception is nevertheless discussed, does not present a partial prerequisite list as sufficient: preserves the same employer, unchanged weekly hours, and Fall-through-Winter or Winter-through-the-duration-of-Spring continuity, as supported by retrieved evidence."
+      ],
+      "execution_status": "error",
+      "error_type": "ServerError",
+      "error_code": 503,
+      "outcome_match": false,
+      "latency_seconds": 0.8310638330003712
+    },
+    {
+      "id": "offer_letter_term_interpretation",
+      "question": "In UMD's CPT offer-letter checklist, does 'The specific term internship or co-op' mean the academic semester, or must the letter literally say internship or co-op?",
+      "passages": [
+        {
+          "source_title": "Curricular Practical Training (CPT)",
+          "publisher": "University of Maryland — ISSS",
+          "page": null,
+          "text": "Obtain an internship/co-op offer letter from an employer which includes all of the following information:\nOfficial company letterhead\nAn authorized signature\nSpecific start and end dates of the internship/co-op*\nNumber of hours per week\nAddress of the workplace (if your employer address is different from the work site, please provide both addresses. No PO Box addresses)\nAmount of compensation\nJob description (specific job responsibilities)\nThe name of your supervisor during the internship/co-op\nThe specific term internship or co-op\nIf you are a Masters thesis/Ph.D. student in your research phase: a statement that the employer understands that this work will be incorporated as  part of your thesis/dissertation research.\n*Internship dates must be within the semester you are registered for the course associated with your CPT (see Step 2).You can find semester dates for each academic year here. If your internship start date has passed or will pass by the time ISSS reviews your CPT application, please include an email from your employer indicating a new later start date.",
+          "source_snapshot": "20261114T213307398026Z"
+        }
+      ],
+      "expected_status": "insufficient_evidence",
+      "manual_review_criteria": [
+        "Does not choose either interpretation of the ambiguous source phrase.",
+        "Treats the source evidence as insufficient, rather than asking the user to clarify an already clear question."
+      ],
+      "execution_status": "error",
+      "error_type": "ServerError",
+      "error_code": 503,
+      "outcome_match": false,
+      "latency_seconds": 14.70917721602018
+    },
+    {
+      "id": "offer_letter_explicit_dates",
+      "question": "Does the UMD CPT offer letter need specific internship start and end dates?",
+      "passages": [
+        {
+          "source_title": "Curricular Practical Training (CPT)",
+          "publisher": "University of Maryland — ISSS",
+          "page": null,
+          "text": "Obtain an internship/co-op offer letter from an employer which includes all of the following information:\nOfficial company letterhead\nAn authorized signature\nSpecific start and end dates of the internship/co-op*\nNumber of hours per week\nAddress of the workplace (if your employer address is different from the work site, please provide both addresses. No PO Box addresses)\nAmount of compensation\nJob description (specific job responsibilities)\nThe name of your supervisor during the internship/co-op\nThe specific term internship or co-op\nIf you are a Masters thesis/Ph.D. student in your research phase: a statement that the employer understands that this work will be incorporated as  part of your thesis/dissertation research.\n*Internship dates must be within the semester you are registered for the course associated with your CPT (see Step 2).You can find semester dates for each academic year here. If your internship start date has passed or will pass by the time ISSS reviews your CPT application, please include an email from your employer indicating a new later start date.",
+          "source_snapshot": "20261114T213307398026Z"
+        }
+      ],
+      "expected_status": "citation_ids_valid",
+      "manual_review_criteria": [
+        "Answers yes using the explicit start/end-date checklist item, with a citation.",
+        "Does not turn the unrelated ambiguous term item into an extra requirement."
+      ],
+      "execution_status": "error",
+      "error_type": "ServerError",
+      "error_code": 503,
+      "outcome_match": false,
+      "latency_seconds": 151.43070431999513
+    },
+    {
+      "id": "offer_letter_date_footnote_conditions",
+      "question": "What semester restriction applies to UMD CPT internship dates, and what does UMD ask for if the internship start date has already passed or will pass by the time ISSS reviews the application?",
+      "passages": [
+        {
+          "source_title": "Curricular Practical Training (CPT)",
+          "publisher": "University of Maryland — ISSS",
+          "page": null,
+          "text": "Obtain an internship/co-op offer letter from an employer which includes all of the following information:\nOfficial company letterhead\nAn authorized signature\nSpecific start and end dates of the internship/co-op*\nNumber of hours per week\nAddress of the workplace (if your employer address is different from the work site, please provide both addresses. No PO Box addresses)\nAmount of compensation\nJob description (specific job responsibilities)\nThe name of your supervisor during the internship/co-op\nThe specific term internship or co-op\nIf you are a Masters thesis/Ph.D. student in your research phase: a statement that the employer understands that this work will be incorporated as  part of your thesis/dissertation research.\n*Internship dates must be within the semester you are registered for the course associated with your CPT (see Step 2).You can find semester dates for each academic year here. If your internship start date has passed or will pass by the time ISSS reviews your CPT application, please include an email from your employer indicating a new later start date.",
+          "source_snapshot": "20261114T213307398026Z"
+        }
+      ],
+      "expected_status": "citation_ids_valid",
+      "manual_review_criteria": [
+        "Dates must be within the semester the student is registered for the course associated with CPT, with a citation.",
+        "Preserves both triggers: the start date has passed OR will pass by ISSS review.",
+        "Requests an email from the employer indicating a new later start date, with a citation.",
+        "Does not claim the later date permits work before authorization or guarantees approval.",
+        "Does not use the date footnote to resolve the separate ambiguous 'specific term' phrase."
+      ],
+      "execution_status": "error",
+      "error_type": "ServerError",
+      "error_code": 503,
+      "outcome_match": false,
+      "latency_seconds": 0.7269555400125682
+    }
+  ]
+}

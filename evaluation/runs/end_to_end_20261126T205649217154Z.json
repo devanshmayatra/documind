@@ -1,0 +1,110 @@
+{
+  "run_id": "20261126T205649217154Z",
+  "scope": "UMD employment development cases; live retrieval and generation, empty chat history; no Streamlit UI",
+  "pipeline": "hybrid_rrf_flashrank",
+  "initial_k": 15,
+  "final_k": 4,
+  "collection": "resume_rag_kb",
+  "model": "models/gemini-3.6-flash",
+  "implementation_sha256": {
+    "core/retriever.py": "27c42f8e52f081cbf6dddd0d71cd2d4ba33f77cb02b55bbd5ad2e85d3b6681ab",
+    "core/generator.py": "94fb520ab60ba67b35b200749aed45f0619be7ef48d08541245abbc08d0651e9",
+    "core/qdrant_engine.py": "f73b5d028057ccf4064bde19a396114035ebc01192b5ab38325a1b102b957da1",
+    "scripts/evaluate_generation.py": "3db6006a569e8ae8eb238afc604ce19d3ecc4485be46e827e5e66ecd548e13f0",
+    "scripts/evaluate_end_to_end.py": "63cf7e7dba81c592cfb44ca988e19552072d977d216cc16b55bfda44e9d28029"
+  },
+  "review_note": "Expected statuses come from supplied-evidence development cases. Review actual retrieved evidence before treating a mismatch as a generation error. A matching status or valid citation IDs do not establish factual support. Reference snapshot is a label, not verification of the live corpus version.",
+  "latency_scope": "Rewrite, embedding, retrieval, reranking, generation and validation; excludes module initialization",
+  "case_count": 1,
+  "reference_outcome_matches": 1,
+  "execution_errors": 0,
+  "completed_reference_outcome_mismatches": 0,
+  "results": [
+    {
+      "case_id": "on_campus_partial_week",
+      "question": "How does UMD count the on-campus workweek for F-1 students if the semester begins midweek?",
+      "reference_expected_status": "citation_ids_valid",
+      "reference_source_snapshot": "20261126T194807975501Z",
+      "manual_review_criteria": [
+        "Cites the Sunday-to-Saturday workweek and the limit of 20 hours or less for the entire week in which the semester begins."
+      ],
+      "manual_review_status": "pending",
+      "passages": [
+        {
+          "text": "Eligibility, Limitations and Deadlines\nYou must have been maintaining F-1 status for at least:\nSemester students: one academic year (2 semesters)\n12 Week Term students: 4 terms\nBe a student in good academic standing\nInternship/training/research must be a requirement for the degree or dissertation completion\nGPA requirements:\nUndergraduates: 2.00\nGraduates: 3.00\nStudents who change degree programs must complete one semester in the new program and receive a qualifying GPA before applying for CPT.\nThis includes; transfer students, Bachelors students who graduate and begin a graduate program and UMCP Masters students who begin a UMD PhD program.\nLimitations\nHours per week:\nNo more than 20 hours per week during the semester, including on campus work (part-time)\nNo maximum limit during school vacations (full-time)\nOnly part-time CPT in student's final term (including summer)\nLocation:",
+          "source": "umd_cpt.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "Curricular Practical Training (CPT)",
+          "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+          "source_updated_at": null,
+          "source_id": "umd_cpt",
+          "source_content_sha256": "29336949f9f65e92888ed38f755bee7ed275a11f7c34500cf87c4ebee141e60c",
+          "rank": 1,
+          "citation_id": "[S1]",
+          "point_id": "2429fbc4-1e80-575b-a629-ed976cb70574",
+          "rerank_score": 0.9251231551170349
+        },
+        {
+          "text": "For J-1 students, authorization is ALWAYS required in advance of beginning the on-campus employment. Log on to iTerp and submit the Application for Student Employment Authorization\" Please wait for approval before beginning the on-campus employment.\nF-1 and J-1 students can be authorized to work on campus for a maximum of 20 hours per week during the semester and may work full time on campus during the summer and winter breaks. The work week for on-campus positions runs from Sunday to Saturday. If a semester begins in the middle of a week, a student should ensure that all work for that week is kept to 20 hours per week or less.\nA full Graduate Assistantship (RA/TA/GA) is considered the equivalent of 20 hours per week on-campus. F-1/J-1 students with full-time assistantships may not undertake additional on- or off-campus employment during the academic year. Assistantship holders may work an additional 20 hours per week during the vacation periods.",
+          "source": "umd_on_campus.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/campus-employment",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "On-Campus Employment",
+          "retrieved_at": "2026-11-26T19:48:07.975501+00:00",
+          "source_updated_at": null,
+          "source_id": "umd_on_campus",
+          "source_content_sha256": "c9070ef42607b4d7265d9141d4bf9dd582b30aaad66145ec5df8aa7590cd7ea4",
+          "rank": 2,
+          "citation_id": "[S2]",
+          "point_id": "0e4f5df8-333b-53ab-88d8-77ff4aaf92f0",
+          "rerank_score": 0.8675017952919006
+        },
+        {
+          "text": "Ending On-Campus Employment to Participate in CPT\nDuring the semester, F-1 students may not exceed a combined total of 20 hours of employment authorization per week. This combined total includes both on-campus and off-campus employment, such as CPT. If you are reducing the number of hours per week you will work or completely terminating your on-campus employment in order to participate in a CPT experience, we will need a letter on official University letterhead from your department/HR that contains the following information:\nTable 2, row 1\nRow label: Reduction of hours only\nHourly on-campus work: Effective start date for the reduction of hourly work New number of hours per week\nGraduate Assistantships: Effective start date for the reduction in hours New number of hours per week Effective start date for the reduction of benefits associated with assistantship (tuition remission, health benefits) The new stipend amount that student will receive through the duration of the assistantship",
+          "source": "umd_cpt.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/curricular-practical-training-cpt",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "Curricular Practical Training (CPT)",
+          "retrieved_at": "2026-11-14T21:33:07.398026+00:00",
+          "source_updated_at": null,
+          "source_id": "umd_cpt",
+          "source_content_sha256": "29336949f9f65e92888ed38f755bee7ed275a11f7c34500cf87c4ebee141e60c",
+          "rank": 3,
+          "citation_id": "[S3]",
+          "point_id": "2209c419-b9e0-5420-a8d2-ae2c96b389fd",
+          "rerank_score": 0.27931836247444153
+        },
+        {
+          "text": "International Students & Scholars\nOn-Campus Employment\nOn-campus employment primarily means positions paid by the University of Maryland, College Park (UMCP) and conducted on campus. Employment with outside organizations which are physically located on campus may be considered on-campus employment only if they provide direct services to students (such as the bookstore or dining services). Employment with an outside contractor which does not provide services to students is considered off-campus employment.\nFor F-1 students, no clearance is needed from ISSS for on-campus employment; however, you will need to complete an I-9 form to show that you are eligible to work in the United States, and a W-4 form to indicate which taxes the University should withhold from you.",
+          "source": "umd_on_campus.txt",
+          "page": null,
+          "source_url": "https://marylandglobal.umd.edu/global-learning-all/international-students-scholars/employment-taxes/employment-f-1-international-students/campus-employment",
+          "publisher": "University of Maryland — International Student & Scholar Services",
+          "source_title": "On-Campus Employment",
+          "retrieved_at": "2026-11-26T19:48:07.975501+00:00",
+          "source_updated_at": null,
+          "source_id": "umd_on_campus",
+          "source_content_sha256": "c9070ef42607b4d7265d9141d4bf9dd582b30aaad66145ec5df8aa7590cd7ea4",
+          "rank": 4,
+          "citation_id": "[S4]",
+          "point_id": "4282d8d4-3cbb-5401-b7c6-9fe81b58af04",
+          "rerank_score": 0.24654865264892578
+        }
+      ],
+      "rewritten_query": "How does UMD count the on-campus workweek for F-1 students if the semester begins midweek?",
+      "expected_source_id": "umd_on_campus",
+      "expected_source_retrieved": true,
+      "retrieval_and_rewrite_seconds": 1.1907457179913763,
+      "execution_status": "ok",
+      "actual_status": "citation_ids_valid",
+      "answer": "The on-campus workweek runs from Sunday to Saturday [S2]. If a semester begins in the middle of a week, students must ensure that all work for that week is kept to 20 hours per week or less [S2].",
+      "citation_errors": [],
+      "reference_outcome_match": true,
+      "latency_seconds": 73.72739246700075
+    }
+  ]
+}

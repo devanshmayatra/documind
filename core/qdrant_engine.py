@@ -133,6 +133,15 @@ def get_dense_embeddings_batch(texts: list[str], max_retries: int = 5) -> list[l
 def upload_chunks(chunks: list[dict], batch_size: int = 10):
     if not chunks:
         return
+    from core.answer_cache import AnswerCache
+
+    with AnswerCache().corpus_update():
+        _upload_chunks(chunks, batch_size)
+
+
+def _upload_chunks(chunks: list[dict], batch_size: int = 10):
+    if not chunks:
+        return
 
     setup_collection()
 

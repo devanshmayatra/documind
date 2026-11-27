@@ -45,6 +45,20 @@ class EndToEndEvaluationTests(unittest.TestCase):
         self.assertIsNone(row["reference_outcome_match"])
         self.assertNotIn("private response body", str(row))
 
+    def test_wrapped_transport_error_records_only_cause_type(self):
+        def wrapped_failure(*args, **kwargs):
+            try:
+                raise TimeoutError("private connection details")
+            except TimeoutError as cause:
+                raise RuntimeError("private wrapper details") from cause
+        self.retrieve.side_effect = wrapped_failure
+        row = self.run_case(self.case)
+        self.assertEqual(row["error_type"], "RuntimeError")
+        self.assertEqual(row["error_cause_type"], "TimeoutError")
+        self.assertNotIn("private connection details", str(row))
+        self.assertNotIn("private wrapper details", str(row))
+        self.generate.assert_not_called()
+
     def test_generation_error_keeps_retrieved_evidence(self):
         class ClientError(Exception):
             code = 429

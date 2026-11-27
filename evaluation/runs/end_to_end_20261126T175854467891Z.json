@@ -1,0 +1,46 @@
+{
+  "run_id": "20261126T175854467891Z",
+  "scope": "Offer-letter development cases; live retrieval and generation, empty chat history; no Streamlit UI",
+  "pipeline": "hybrid_rrf_flashrank",
+  "initial_k": 15,
+  "final_k": 4,
+  "collection": "resume_rag_kb",
+  "model": "models/gemini-3.6-flash",
+  "implementation_sha256": {
+    "core/retriever.py": "48f45bd384bdd9096a0bdade1376b900e981f3222ba677d995e5407dd79216d7",
+    "core/generator.py": "63528645ce03a4a003b1133076fa1681a69f6062741a6bb5303a88fbb71d2db1",
+    "core/qdrant_engine.py": "9cb2537c357a735b8a33c0ed77c5e8136da9de62db244b9e68528019ba04ee7c",
+    "scripts/evaluate_generation.py": "ba95045fe3b81b160b7ededd0e025d0cc1b81e5be4181ab6475037ec82572d7d",
+    "scripts/evaluate_end_to_end.py": "9f4f040d2829d7d3bcf6c6f7e2b204fd2cbf0dabc7dfd187928ef557163ca203"
+  },
+  "review_note": "Expected statuses come from supplied-evidence development cases. Review actual retrieved evidence before treating a mismatch as a generation error. A matching status or valid citation IDs do not establish factual support. Reference snapshot is a label, not verification of the live corpus version.",
+  "latency_scope": "Rewrite, embedding, retrieval, reranking, generation and validation; excludes module initialization",
+  "case_count": 1,
+  "reference_outcome_matches": 0,
+  "execution_errors": 1,
+  "completed_reference_outcome_mismatches": 0,
+  "results": [
+    {
+      "case_id": "offer_letter_preserve_ambiguity",
+      "question": "What must the UMD CPT employer offer letter include?",
+      "reference_expected_status": "citation_ids_valid",
+      "reference_source_snapshot": "20261114T213307398026Z",
+      "manual_review_criteria": [
+        "Includes the supported checklist items and their conditions.",
+        "Preserves the date footnote: dates within the semester of the CPT-associated course; employer email with a new later start date if the original date has passed or will pass by ISSS review.",
+        "Quotes 'The specific term internship or co-op' and flags its meaning as unclear.",
+        "Does not assert an academic-semester requirement or a literal-wording requirement from that phrase."
+      ],
+      "manual_review_status": "pending",
+      "passages": [],
+      "rewritten_query": "What must the UMD CPT employer offer letter include?",
+      "execution_status": "error",
+      "error_stage": "retrieval",
+      "error_type": "ResponseHandlingException",
+      "error_cause_type": "ConnectError",
+      "error_code": null,
+      "reference_outcome_match": null,
+      "latency_seconds": 0.601485736988252
+    }
+  ]
+}

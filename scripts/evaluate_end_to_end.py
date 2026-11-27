@@ -5,6 +5,7 @@ import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from scripts.eval_pacing import paced_cases
 from time import perf_counter
 
 from core.generator import GENERATION_MODEL, generate_grounded_answer, rewrite_query
@@ -22,7 +23,7 @@ def run_case(case):
         "case_id": case["id"],
         "question": case["question"],
         "reference_expected_status": case["expected_status"],
-        "reference_source_snapshot": case["passages"][0]["source_snapshot"],
+        "reference_source_snapshot": (case.get("source_snapshot") or case["passages"][0]["source_snapshot"]),
         "manual_review_criteria": case["manual_review_criteria"],
         "manual_review_status": "pending",
         "passages": [],
@@ -37,7 +38,7 @@ def run_case(case):
         for rank, passage in enumerate(passages, start=1):
             saved = {key: passage.get(key) for key in (
                 "text", "source", "page", "source_url", "publisher",
-                "source_title", "retrieved_at", "source_updated_at",
+                "source_title", "retrieved_at", "source_updated_at", "source_id", "source_content_sha256",
             )}
             saved.update({
                 "rank": rank,
@@ -46,6 +47,11 @@ def run_case(case):
                 "rerank_score": float(passage["score"]) if passage.get("score") is not None else None,
             })
             row["passages"].append(saved)
+        if "expected_source_id" in case:
+            row["expected_source_id"] = case["expected_source_id"]
+            row["expected_source_retrieved"] = any(
+                p["source_id"] == case["expected_source_id"] for p in row["passages"]
+            )
         row["retrieval_and_rewrite_seconds"] = perf_counter() - started
         stage = "generation"
         result = generate_grounded_answer(question=query, passages=passages)
@@ -58,10 +64,13 @@ def run_case(case):
         })
     except Exception as error:
         code = getattr(error, "code", None)
+        # Save class names only; wrapped transport messages may contain URLs.
+        cause = error.__cause__ or error.__context__
         row.update({
             "execution_status": "error",
             "error_stage": stage,
             "error_type": type(error).__name__,
+            "error_cause_type": type(cause).__name__ if cause is not None else None,
             "error_code": code if type(code) is int else None,
             "reference_outcome_match": None,
         })
@@ -71,6 +80,7 @@ def run_case(case):
 
 def main():
     cases = [case for case in build_cases() if case["id"].startswith("offer_letter_")]
+    cases.extend(json.loads((ROOT / "evaluation/employment_cases.json").read_text(encoding="utf-8")))
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--case", action="append", dest="case_ids",
                         choices=[case["id"] for case in cases],
@@ -79,7 +89,7 @@ def main():
     if args.case_ids:
         cases = [case for case in cases if case["id"] in args.case_ids]
     results = []
-    for case in cases:
+    for case in paced_cases(cases):
         print(f"Running: {case['id']}", flush=True)
         row = run_case(case)
         results.append(row)
@@ -90,7 +100,7 @@ def main():
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     report = {
         "run_id": run_id,
-        "scope": "Offer-letter development cases; live retrieval and generation, empty chat history; no Streamlit UI",
+        "scope": "UMD employment development cases; live retrieval and generation, empty chat history; no Streamlit UI",
         "pipeline": "hybrid_rrf_flashrank",
         "initial_k": 15,
         "final_k": 4,

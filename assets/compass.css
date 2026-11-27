@@ -1,0 +1,120 @@
+/* F-1 Compass: a light reference desk.
+   Design workflow: unslop by Damir Sokolovsky (@heydamir), CC BY 4.0. */
+:root {
+  --paper: #faf9f6;
+  --surface: #ffffff;
+  --raised: #f1efea;
+  --ink: #272822;
+  --secondary: #595b53;
+  --muted: #6d7066;
+  --line: #dedfd7;
+  --accent: #9b352e;
+}
+.stApp {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+[data-testid="stHeader"] { background: var(--paper); }
+[data-testid="stMainBlockContainer"] {
+  max-width: 1440px;
+  padding: 5rem 48px 120px;
+}
+[data-testid="stSidebar"] {
+  background: #f1f0eb;
+  border-right: 1px solid var(--line);
+  min-width: 272px;
+  max-width: 272px;
+}
+[data-testid="stSidebarContent"] { padding: 16px 8px; }
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] { gap: 12px; }
+[data-testid="stSidebar"] p { color: var(--secondary); font-size: 14px; line-height: 1.6; }
+[data-testid="stSidebar"] hr { margin: 16px 0; border-color: var(--line); }
+[data-testid="stSidebar"] h3 { font-size: 16px; font-weight: 500; padding: 0; }
+.brand { display: flex; gap: 12px; align-items: center; margin-bottom: 32px; }
+.brand-mark { width: 32px; height: 32px; flex: 0 0 32px; }
+.brand-name { color: var(--ink); font-size: 19px; font-weight: 600; line-height: 1.2; }
+.brand-note { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.scope-label { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+.scope-name { color: var(--ink); font-size: 16px; font-weight: 500; margin: 0; }
+.scope-detail { color: var(--secondary); font-size: 14px; margin: 4px 0 16px; }
+.sidebar-note { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top: 8px; }
+.workspace-bar { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.workspace-bar span:first-child { color: var(--secondary); }
+.hero { padding: 40px 0 24px; }
+.hero h1 { color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(40px, 4.4vw, 64px); font-weight: 400; letter-spacing: -0.025em; line-height: 1.08; margin: 0 0 24px; max-width: 800px; }
+.hero .hero-accent { color: var(--accent); }
+.hero p { font-size: 18px; color: var(--secondary); line-height: 1.6; max-width: 640px; margin: 0; }
+.conversation-heading { padding: 28px 0 16px; }
+.conversation-heading h1 { font: 400 36px/1.2 Georgia, serif; color: var(--ink); margin: 0 0 12px; }
+.conversation-heading p { color: var(--secondary); font-size: 15px; margin: 0; }
+.section-note { font-size: 13px; color: var(--muted); padding: 12px 0 0; }
+.reading-note { display: flex; gap: 16px; border-top: 1px solid var(--line); padding-top: 20px; margin: 24px 0 16px; color: var(--secondary); font-size: 14px; line-height: 1.6; }
+.reading-note strong { color: var(--accent); font-weight: 500; flex-shrink: 0; }
+[data-testid="stButton"] button,
+[data-testid="stLinkButton"] a {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 8px;
+  min-height: 44px;
+  padding: 12px 16px;
+  font-weight: 400;
+  transition: background-color 160ms ease-out, border-color 160ms ease-out;
+}
+[data-testid="stButton"] button:hover,
+[data-testid="stLinkButton"] a:hover { background: var(--raised); border-color: #b8bab0; color: var(--ink); }
+[data-testid="stButton"] button[kind="primary"] { background: var(--accent); color: white; border-color: var(--accent); }
+[data-testid="stButton"] button:focus-visible,
+[data-testid="stLinkButton"] a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+[data-testid="stMainBlockContainer"] [data-testid="stHorizontalBlock"] [data-testid="stButton"] button {
+  text-align: left;
+  justify-content: flex-start;
+  min-height: 72px;
+  padding: 16px 20px;
+}
+[data-testid="stMainBlockContainer"] [data-testid="stHorizontalBlock"] [data-testid="stButton"] button p { font-size: 15px; line-height: 1.5; }
+[data-testid="stMainBlockContainer"] [data-testid="stHorizontalBlock"] [data-testid="stButton"] button > div { width: 100%; text-align: left; }
+[data-testid="stMainBlockContainer"] [data-testid="stHorizontalBlock"] [data-testid="stButton"] button p { text-align: left; }
+[data-testid="stAppDeployButton"] { display: none; }
+[data-testid="stCaptionContainer"] p { color: var(--muted); font-size: 13px; line-height: 1.6; }
+[data-testid="stCheckbox"] { margin: 8px 0; }
+[data-testid="stCheckbox"] label p { font-size: 13px; color: var(--secondary); }
+[data-testid="stBottom"] { background: var(--paper); }
+[data-testid="stBottomBlockContainer"] { padding-top: 16px; padding-bottom: 24px; }
+[data-testid="stChatInput"] { background: var(--surface); border: 1px solid #bfc1b6; border-radius: 12px; }
+[data-testid="stChatInput"]:focus-within { border-color: var(--accent); outline: 2px solid #9b352e22; }
+[data-testid="stChatInput"] textarea { color: var(--ink); min-height: 52px; font-size: 16px; }
+[data-testid="stChatInputSubmitButton"] { color: var(--accent); }
+[data-testid="stChatMessage"] { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin: 8px 0; }
+[data-testid="stChatMessageAvatarAssistant"], [data-testid="stChatMessageAvatarUser"] { display: none; }
+[data-testid="stChatMessageContent"] { width: 100%; min-width: 0; }
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p,
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] li { line-height: 1.75; font-size: 15px; }
+[data-testid="stExpander"] { border: 1px solid var(--line); border-radius: 8px; background: transparent; }
+[data-testid="stExpander"] summary { color: var(--secondary); font-size: 14px; }
+[data-testid="stExpander"] [data-testid="stVerticalBlockBorderWrapper"] { background: var(--paper); border-radius: 8px; }
+.source-heading { display: flex; align-items: baseline; gap: 12px; margin: 0 0 4px; font-size: 16px; color: var(--ink); font-weight: 500; overflow-wrap: anywhere; }
+.source-index { color: var(--accent); font-family: ui-monospace, monospace; font-size: 13px; white-space: nowrap; }
+.source-excerpt { border-left: 2px solid #b4b7a8; padding: 4px 0 4px 16px; margin: 12px 0 16px; color: var(--secondary); font: 400 14px/1.75 "Segoe UI", sans-serif; white-space: pre-wrap; overflow-wrap: anywhere; }
+[data-testid="stAlert"] { border-radius: 8px; }
+@media (max-width: 900px) {
+  [data-testid="stMainBlockContainer"] { padding: 5rem 24px 112px; }
+  .hero { padding-top: 32px; }
+  .hero h1 { font-size: 48px; }
+}
+@media (max-width: 640px) {
+  [data-testid="stMainBlockContainer"] { padding: 5rem 16px 96px; }
+  .workspace-bar { font-size: 12px; gap: 8px; padding-bottom: 16px; }
+  .hero { padding-top: 24px; }
+  .hero h1 { font-size: 40px; margin-bottom: 16px; }
+  .hero p { font-size: 16px; }
+  [data-testid="stHorizontalBlock"] { flex-wrap: wrap; }
+  [data-testid="stHorizontalBlock"] [data-testid="stColumn"] { flex: 1 1 100%; min-width: 0; }
+  [data-testid="stChatMessage"] { padding: 16px; }
+  .reading-note { display: block; }
+  .reading-note strong { display: block; margin-bottom: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
